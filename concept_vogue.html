@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Ingle | Vogue Concept</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Premium Fonts: Playfair Display (Serif) + Manrope (Sans) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vogue-black': '#121212',
+                        'vogue-white': '#FFFFFF',
+                        'vogue-offwhite': '#F9F9F9',
+                        'vogue-champagne': '#EAD7C5',
+                    },
+                    fontFamily: {
+                        'sans': ['Manrope', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                    fontSize: {
+                        '10xl': '10rem',
+                        '12xl': '12rem',
+                        'huge': '16rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #121212;
+            cursor: none;
+            /* Custom cursor */
+        }
+
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #121212;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(18, 18, 18, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        /* Reveal Animations */
+        .reveal-text {
+            clip-path: inset(0 0 100% 0);
+            transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .reveal-text.active {
+            clip-path: inset(0 0 0 0);
+        }
+
+        .reveal-image {
+            clip-path: inset(100% 0 0 0);
+            transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .reveal-image.active {
+            clip-path: inset(0 0 0 0);
+        }
+
+        /* Smooth Scroll Container */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .image-parallax {
+            transition: transform 0.1s linear;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-black selection:text-white">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot hidden lg:block"></div>
+    <div class="cursor-outline hidden lg:block"></div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 mix-blend-difference text-white px-8 lg:px-16 py-8 flex justify-between items-center">
+        <div class="font-serif text-2xl italic tracking-wide">SI.</div>
+        <div class="hidden md:flex gap-12 text-xs uppercase tracking-[0.2em] font-medium">
+            <a href="#" class="hover-link">Collection</a>
+            <a href="#" class="hover-link">Philosophy</a>
+            <a href="#" class="hover-link">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Editorial Hero -->
+        <section
+            class="relative min-h-screen w-full flex flex-col justify-between pt-32 pb-16 px-8 lg:px-16 overflow-hidden">
+
+            <!-- Background Typography Decoration -->
+            <div
+                class="absolute top-0 left-0 w-full h-full -z-10 opacity-[0.03] pointer-events-none flex items-center justify-center overflow-hidden">
+                <span class="font-serif text-[40vw] leading-none whitespace-nowrap">VISION</span>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 h-full items-end">
+
+                <!-- Title Block (Left) -->
+                <div class="lg:col-span-7 z-10">
+                    <div class="overflow-hidden mb-4">
+                        <div class="text-xs font-sans uppercase tracking-[0.3em] font-medium reveal-text"
+                            style="transition-delay: 0.1s">Land Developer & Visionary</div>
+                    </div>
+
+                    <div class="relative">
+                        <h1
+                            class="font-serif text-8xl lg:text-[11rem] leading-[0.8] tracking-tight text-vogue-black mb-6">
+                            <div class="overflow-hidden"><span class="block reveal-text"
+                                    style="transition-delay: 0.3s">SACHIN</span></div>
+                            <div class="overflow-hidden"><span class="block reveal-text italic ml-16 lg:ml-32"
+                                    style="transition-delay: 0.5s">INGLE</span></div>
+                        </h1>
+                    </div>
+
+                    <div class="max-w-md mt-12 overflow-hidden">
+                        <p class="font-sans font-light text-lg leading-relaxed text-neutral-600 reveal-text"
+                            style="transition-delay: 0.7s">
+                            Curating legacy-defining landscapes in Nagpur's most prestigious coordinates. Where nature
+                            meets architectural excellence.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 overflow-hidden">
+                        <a href="#explore"
+                            class="inline-flex items-center gap-4 text-xs font-sans uppercase tracking-[0.2em] group reveal-text"
+                            style="transition-delay: 0.9s">
+                            <span class="w-12 h-[1px] bg-black group-hover:w-24 transition-all duration-500"></span>
+                            Explore Portfolio
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Block (Right) -->
+                <div class="lg:col-span-5 h-full relative flex items-end justify-end lg:-mb-16">
+                    <div class="relative w-full aspect-[3/4] max-w-lg">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -top-6 -right-6 w-full h-full border border-black/10 z-0 reveal-image"
+                            style="transition-delay: 0.6s"></div>
+
+                        <!-- Main Image -->
+                        <div class="w-full h-full overflow-hidden relative z-10"
+                            style="transition-delay: 0.4s">
+                            <img src="./public/sachin-ingle.jpg" alt="Sachin Ingle"
+                                class="w-full h-full object-cover grayscale-[20%] contrast-[1.1] image-parallax scale-110"
+                                data-speed="0.05">
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute -bottom-8 -left-8 w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-xl z-20 animate-spin-slow">
+                            <svg viewBox="0 0 100 100" width="100" height="100">
+                                <defs>
+                                    <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                                </defs>
+                                <text font-size="11" font-family="Manrope" font-weight="500" letter-spacing="2">
+                                    <textPath xlink:href="#circle">
+                                        ESTABLISHED 2010 • NAGPUR •
+                                    </textPath>
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Strip -->
+        <div class="border-y border-black/5 py-8 overflow-hidden bg-white">
+            <div class="flex gap-24 whitespace-nowrap animate-marquee font-serif italic text-3xl text-neutral-300">
+                <span>Premium Land Banks</span> <span class="text-neutral-200">•</span> <span>Commercial Plots</span> <span
+                    class="text-neutral-200">•</span> <span>NMRDA Sanctioned</span> <span
+                    class="text-neutral-200">•</span> <span>Strategic Investments</span> <span
+                    class="text-neutral-200">•</span>
+                <span>Premium Land Banks</span> <span class="text-neutral-200">•</span> <span>Commercial Plots</span> <span
+                    class="text-neutral-200">•</span> <span>NMRDA Sanctioned</span> <span
+                    class="text-neutral-200">•</span> <span>Strategic Investments</span>
+            </div>
+        </div>
+
+        <!-- Selected Works Section -->
+        <section id="work" class="py-32 px-8 lg:px-16 bg-[#FAFAFA]">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-24">
+                <h2 class="font-serif text-6xl lg:text-8xl leading-none">
+                    Selected <br> <span class="italic text-neutral-400">Landmarks</span>
+                </h2>
+                <div class="mb-4 text-xs font-sans uppercase tracking-[0.2em] relative group cursor-pointer">
+                    View All Projects
+                    <span
+                        class="absolute -bottom-2 left-0 w-full h-[1px] bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                </div>
+            </div>
+
+            <!-- Project List (Editorial Style) -->
+            <div class="space-y-32">
+                <!-- Project 1 - Featured Brand -->
+                <div class="group relative grid lg:grid-cols-12 gap-8 items-center cursor-none">
+                    <div class="lg:col-span-12 overflow-hidden relative aspect-[21/9]">
+                        <div
+                            class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1449156001433-4636a7df92a8?q=80&w=2400&auto=format&fit=crop"
+                            alt="Saraswati Nagari"
+                            class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.5s]">
+                        <div class="absolute bottom-12 left-12 z-20 text-white">
+                            <div class="text-[10px] uppercase tracking-[0.4em] mb-2 opacity-60">Featured Brand</div>
+                            <h3 class="font-serif text-6xl group-hover:italic transition-all duration-500">Saraswati <br>Nagari</h3>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-8 mt-12">
+                         <p class="font-sans text-neutral-500 max-w-2xl leading-relaxed mb-8 text-xl">
+                            Nagpur's premium plotting brand offering **NMRDA-sanctioned** residential layouts. Integrated with world-class infrastructure including STP, open gyms, and lush green parks.
+                        </p>
+                        <div class="flex gap-12 items-center">
+                            <ul class="flex gap-4 text-xs font-sans uppercase tracking-wider text-neutral-400">
+                                <li>Nagpur</li>
+                                <li>•</li>
+                                <li>ESTD 2010</li>
+                            </ul>
+                            <a href="https://saraswati-nagari.vercel.app/" target="_blank" class="text-xs uppercase tracking-[0.2em] font-medium border-b border-black/20 pb-1 hover:border-black transition-colors">Visit Project Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="py-32 bg-vogue-black text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-neutral-900/20 blur-3xl pointer-events-none"></div>
+
+            <div class="px-8 lg:px-16 grid lg:grid-cols-12 gap-16 relative z-10">
+                <div class="lg:col-span-4">
+                    <div class="w-full h-[1px] bg-white/20 mb-8"></div>
+                    <span class="text-xs font-sans uppercase tracking-[0.2em] text-neutral-400">The Philosophy</span>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <p class="font-serif text-4xl lg:text-6xl leading-[1.2] opacity-0 reveal-text">
+                        "We don't just develop land; we curate the <span class="italic text-neutral-400">canvas for
+                            future legacies</span>. Every square foot is chosen with the precision of an artist and the
+                        foresight of a visionary."
+                    </p>
+
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-12 mt-24">
+                        <div>
+                            <h4 class="font-sans text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Vision</h4>
+                            <p class="font-serif text-2xl text-neutral-300">Sustainable <br>Growth</p>
+                        </div>
+                        <div>
+                            <h4 class="font-sans text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Standard</h4>
+                            <p class="font-serif text-2xl text-neutral-300">Uncompromised <br>Quality</p>
+                        </div>
+                        <div>
+                            <h4 class="font-sans text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Promise</h4>
+                            <p class="font-serif text-2xl text-neutral-300">Clear <br>Titles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#FAFAFA] text-black pt-32 pb-12 px-8 lg:px-16">
+            <div class="border-b border-black/10 pb-24 mb-12">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="font-serif text-7xl lg:text-9xl tracking-tight mb-8">
+                            Let's <br> <span class="italic">Talk.</span>
+                        </h2>
+                        <a href="mailto:hello@sachiningle.com"
+                            class="inline-flex items-center gap-4 text-sm font-sans uppercase tracking-[0.2em] group">
+                            hello@sachiningle.com
+                            <span class="w-8 h-[1px] bg-black group-hover:w-16 transition-all duration-500"></span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-12 lg:pl-32">
+                        <div>
+                            <h4 class="font-sans text-xs uppercase tracking-[0.2em] text-neutral-400 mb-6">Socials</h4>
+                            <ul class="space-y-4 font-sans text-sm">
+                                <li><a href="#" class="hover:italic transition-all">Instagram</a></li>
+                                <li><a href="#" class="hover:italic transition-all">LinkedIn</a></li>
+                                <li><a href="#" class="hover:italic transition-all">Twitter</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-sans text-xs uppercase tracking-[0.2em] text-neutral-400 mb-6">Office</h4>
+                            <address class="font-sans text-sm not-italic leading-relaxed">
+                                42, Civil Lines <br>
+                                Nagpur, MH 440001 <br>
+                                India
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col lg:flex-row justify-between items-center text-xs font-sans uppercase tracking-widest text-neutral-400">
+                <div>&copy; 2024 Sachin Ingle</div>
+                <div class="mt-4 lg:mt-0">Designed by Antigravity</div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Reveal Animations on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Text and Image Reveals
+            const reveals = document.querySelectorAll('.reveal-text, .reveal-image');
+            setTimeout(() => {
+                reveals.forEach(el => el.classList.add('active'));
+            }, 100);
+
+            // Custom Cursor Logic
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorOutline = document.querySelector('.cursor-outline');
+
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                // Slight delay for outline
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: "forwards" });
+            });
+
+            // Hover effects
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorOutline.style.width = '60px';
+                    cursorOutline.style.height = '60px';
+                    cursorOutline.style.backgroundColor = 'rgba(18, 18, 18, 0.1)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorOutline.style.width = '40px';
+                    cursorOutline.style.height = '40px';
+                    cursorOutline.style.backgroundColor = 'transparent';
+                });
+            });
+
+            // Parallax Effect
+            document.addEventListener('mousemove', (e) => {
+                const parallaxImages = document.querySelectorAll('.image-parallax');
+                parallaxImages.forEach(img => {
+                    const speed = img.getAttribute('data-speed');
+                    const x = (window.innerWidth - e.pageX * speed) / 100;
+                    const y = (window.innerHeight - e.pageY * speed) / 100;
+                    img.style.transform = `scale(1.1) translateX(${x}px) translateY(${y}px)`;
+                });
+            });
+        });
+
+        // Add tailwind animation for marquee
+        tailwind.config.theme.extend.animation = {
+            'spin-slow': 'spin 12s linear infinite',
+            'marquee': 'marquee 20s linear infinite',
+        }
+        tailwind.config.theme.extend.keyframes = {
+            marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+            }
+        }
+    </script>
+</body>
+
+</html>

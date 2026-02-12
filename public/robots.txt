@@ -1,0 +1,10 @@
+# Professional Robot Exclusion File
+User-agent: *
+Allow: /
+
+# Sitemaps are recommended for better indexing but we hide system paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+Sitemap: https://sachiningle.com/sitemap.xml

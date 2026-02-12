@@ -1,0 +1,19 @@
+'use client';
+
+import VogueHero from "@/components/vogue/hero";
+import VogueStory from "@/components/vogue/story";
+import VogueWorks from "@/components/vogue/works";
+import VoguePhilosophy from "@/components/vogue/philosophy";
+import VogueTrustBadges from "@/components/vogue/trust-badges";
+
+export default function Home() {
+    return (
+        <main className="min-h-screen bg-vogue-offwhite text-vogue-black selection:bg-black selection:text-white">
+            <VogueHero />
+            <VogueStory />
+            <VogueWorks />
+            <VogueTrustBadges />
+            <VoguePhilosophy />
+        </main>
+    );
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Ingle | Architect Concept</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Premium Fonts: Space Grotesk (Display) + DM Sans (Body) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'swiss-bg': '#F3F4F6',
+                        'swiss-black': '#111111',
+                        'swiss-blue': '#2A45C2',
+                        'swiss-orange': '#FF4D00',
+                    },
+                    fontFamily: {
+                        'sans': ['DM Sans', 'sans-serif'],
+                        'display': ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F3F4F6;
+            color: #111111;
+        }
+
+        /* Bento Grid Cards */
+        .bento-card {
+            background: #FFFFFF;
+            border-radius: 2rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Scramble Text Effect (CSS for animation structure) */
+        .scramble-hover:hover {
+            color: #2A45C2;
+        }
+
+        /* Grid Pattern Background */
+        .grid-pattern {
+            background-image: linear-gradient(#e5e7eb 1px, transparent 1px),
+                linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Sticky Tag */
+        .sticky-tag {
+            position: sticky;
+            top: 1rem;
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen grid-pattern selection:bg-swiss-blue selection:text-white">
+
+    <!-- Navbar (Floating Pill) -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+        <div
+            class="bg-white/90 backdrop-blur-md px-2 py-2 rounded-full border border-black/5 shadow-lg flex items-center gap-1">
+            <a href="#"
+                class="h-10 px-6 rounded-full bg-swiss-black text-white flex items-center text-sm font-medium tracking-wide">
+                SI.
+            </a>
+            <div class="flex gap-1">
+                <a href="#"
+                    class="h-10 px-6 rounded-full hover:bg-black/5 flex items-center text-sm font-medium transition-colors">Projects</a>
+                <a href="#"
+                    class="h-10 px-6 rounded-full hover:bg-black/5 flex items-center text-sm font-medium transition-colors">About</a>
+                <a href="#"
+                    class="h-10 px-6 rounded-full hover:bg-black/5 flex items-center text-sm font-medium transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-[1400px] mx-auto px-4 lg:px-6 pt-32 pb-16">
+
+        <!-- Bento Grid Hero -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[120px]">
+
+            <!-- 1. Intro Card (Large) -->
+            <div class="md:col-span-8 md:row-span-4 bento-card p-10 flex flex-col justify-between group">
+                <div class="flex justify-between items-start">
+                    <div
+                        class="bg-swiss-bg px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-neutral-500">
+                        Available for '26
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-full bg-swiss-black text-white flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-transform duration-500">
+                        ➜
+                    </div>
+                </div>
+
+                <div>
+                    <h1 class="font-display font-medium text-6xl lg:text-7xl leading-[0.95] tracking-tight mb-6">
+                        Building the <br>
+                        <span class="text-neutral-400">Foundation</span> of <br>
+                        Tomorrow.
+                    </h1>
+                    <p class="max-w-md text-lg text-neutral-600 font-sans">
+                        Premium land development across Nagpur's strategic corridors.
+                        Structured investments, verified titles, legacy value.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Profile Image Card -->
+            <div class="md:col-span-4 md:row-span-3 bento-card relative group p-0">
+                <img src="public/sachin-ingle.jpg" alt="Sachin Ingle"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-sm font-bold">
+                    Sachin Ingle
+                </div>
+            </div>
+
+            <!-- 3. Stat Card 1 -->
+            <div
+                class="md:col-span-2 md:row-span-2 bento-card bg-swiss-black text-white p-6 flex flex-col justify-between group">
+                <div class="text-neutral-500 text-xs uppercase font-bold">Total Area</div>
+                <div class="font-display text-5xl group-hover:text-swiss-blue transition-colors">500+</div>
+                <div class="text-sm text-neutral-400">Acres Developed</div>
+            </div>
+
+            <!-- 4. Stat Card 2 -->
+            <div
+                class="md:col-span-2 md:row-span-2 bento-card bg-swiss-blue text-white p-6 flex flex-col justify-between group">
+                <div class="text-white/60 text-xs uppercase font-bold">Experience</div>
+                <div class="font-display text-5xl group-hover:scale-110 origin-left transition-transform">15Y</div>
+                <div class="text-sm text-white/80">Industry Leadership</div>
+            </div>
+
+            <!-- 5. Location Map/Button -->
+            <div
+                class="md:col-span-4 md:row-span-1 bento-card p-0 flex items-center justify-between px-8 hover:bg-swiss-orange hover:text-white group cursor-pointer">
+                <span class="font-display text-xl font-medium">Explore Nagpur Map</span>
+                <span class="text-2xl group-hover:translate-x-2 transition-transform">→</span>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        // Simple entrance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bento-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+
+</html>
