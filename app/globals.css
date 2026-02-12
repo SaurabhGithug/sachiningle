@@ -4,22 +4,36 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* #FAFAFA */
-    --foreground: 0 0% 7%;   /* #121212 */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
-    --primary: 0 0% 7%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 30 46% 85%; /* #EAD7C5 */
-    --secondary-foreground: 0 0% 7%;
-    --accent: 30 46% 85%;
-    --accent-foreground: 0 0% 7%;
-    --muted: 0 0% 98%;
-    --muted-foreground: 0 0% 45%;
-    --border: 0 0% 7% / 0.1;
-    --input: 0 0% 7% / 0.1;
-    --ring: 0 0% 7%;
-    --radius: 0px;
+    /* "Visionary Creator" Palette - Dark Premium */
+    --background: 240 10% 3.9%; /* #09090b - Deep Onyx */
+    --foreground: 0 0% 98%; /* #fafafa - Crisp White */
+
+    --card: 240 10% 4.5%; /* Slightly lighter onyx */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 45 25% 60%; /* #c4b57e - Muted Champagne Gold */
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%; /* Dark Grey */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0px; /* Sharp, architectural edges */
   }
 }
 
@@ -29,7 +43,7 @@
   }
 
   body {
-    @apply bg-vogue-offwhite text-vogue-black font-sans leading-relaxed;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary selection:text-primary-foreground;
   }
 
   h1,
@@ -38,7 +52,7 @@
   h4,
   h5,
   h6 {
-    @apply font-serif font-normal;
+    @apply font-serif font-normal tracking-tight;
   }
 }
 
@@ -91,13 +105,24 @@
   /* Geometric patterns */
   .pattern-teal {
     background-image:
-      radial-gradient(circle at 20% 50%, rgba(27, 127, 142, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(27, 127, 142, 0.05) 0%, transparent 50%);
+      radial-gradient(
+        circle at 20% 50%,
+        rgba(27, 127, 142, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(27, 127, 142, 0.05) 0%,
+        transparent 50%
+      );
   }
 
   .pattern-peach {
-    background-image:
-      radial-gradient(circle at 30% 40%, rgba(232, 165, 152, 0.1) 0%, transparent 50%);
+    background-image: radial-gradient(
+      circle at 30% 40%,
+      rgba(232, 165, 152, 0.1) 0%,
+      transparent 50%
+    );
   }
 
   /* Animations */
@@ -118,12 +143,10 @@
   }
 
   @keyframes float {
-
     0%,
     100% {
       transform: translateY(0px);
     }
-
     50% {
       transform: translateY(-15px);
     }
@@ -131,5 +154,44 @@
 
   .animate-float {
     animation: float 4s ease-in-out infinite;
+  }
+
+  /* Glassmorphism Utilities - Premium Upgrade */
+  .glass {
+    background: rgba(10, 10, 10, 0.7); /* Deeper Onyx */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card:hover {
+    @apply bg-white/80 backdrop-blur-lg border border-slate-200/50 shadow-lg hover:shadow-xl transition-all duration-500;
+  }
+  
+  /* Modern Text Gradients */
+  .text-gradient-navy {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-executive-navy to-executive-blue;
+  }
+
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-executive-blue to-cyan-500;
+  }
+
+  /* Executive Micro-interactions */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-glow-blue {
+    @apply transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.15)];
   }
 }

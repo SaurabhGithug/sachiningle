@@ -5,11 +5,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center whitespace-nowrap rounded-none text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
     {
         variants: {
             variant: {
-                default: "bg-primary text-primary-foreground hover:bg-primary/90",
+                default: "bg-vogue-champagne text-vogue-black hover:bg-vogue-gold-dark hover:shadow-lg transition-all duration-300 font-sans tracking-widest uppercase",
                 destructive:
                     "bg-destructive text-destructive-foreground hover:bg-destructive/90",
                 outline:
@@ -18,6 +18,9 @@ const buttonVariants = cva(
                     "bg-secondary text-secondary-foreground hover:bg-secondary/80",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
+                luxury: "bg-vogue-champagne text-vogue-black hover:bg-vogue-gold-dark hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500 font-sans tracking-[0.2em] uppercase text-xs border border-transparent hover:scale-105",
+                "outline-luxury": "border border-vogue-champagne text-vogue-champagne bg-transparent hover:bg-vogue-champagne hover:text-vogue-black transition-all duration-500 font-sans tracking-[0.2em] uppercase text-xs hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]",
+                "ghost-luxury": "text-vogue-champagne hover:bg-vogue-champagne/10 hover:text-vogue-gold-light transition-all duration-300 font-sans tracking-[0.2em] uppercase text-xs",
             },
             size: {
                 default: "h-10 px-4 py-2",
@@ -27,7 +30,7 @@ const buttonVariants = cva(
             },
         },
         defaultVariants: {
-            variant: "default",
+            variant: "luxury",
             size: "default",
         },
     }

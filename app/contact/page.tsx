@@ -104,31 +104,31 @@ import { useState } from 'react';
                         <div id="inquiry-form" className="bg-white p-8 lg:p-12 shadow-sm border border-black/5">
                             <form className="space-y-8" onSubmit={handleSubmit}>
                                 <div>
-                                    <label className="block text-xs font-sans uppercase tracking-widest text-neutral-400 mb-2">Name</label>
-                                    <input type="text" name="name" required className="w-full bg-transparent border-b border-black/20 py-2 focus:border-black outline-none transition-colors font-serif text-xl" placeholder="John Doe" />
+                                    <label className="block text-xs font-sans uppercase tracking-widest text-neutral-400 mb-2">Full Name</label>
+                                    <input type="text" name="name" required className="w-full bg-transparent border-b border-black/20 py-3 focus:border-black outline-none transition-colors font-serif text-xl" placeholder="e.g. Sachin Ingle" />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-sans uppercase tracking-widest text-neutral-400 mb-2">Phone</label>
-                                    <input type="tel" name="phone" required className="w-full bg-transparent border-b border-black/20 py-2 focus:border-black outline-none transition-colors font-serif text-xl" placeholder="+91" />
+                                    <label className="block text-xs font-sans uppercase tracking-widest text-neutral-400 mb-2">Mobile Number</label>
+                                    <input type="tel" name="phone" required className="w-full bg-transparent border-b border-black/20 py-3 focus:border-black outline-none transition-colors font-serif text-xl" placeholder="+91" />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-sans uppercase tracking-widest text-neutral-400 mb-2">Interest</label>
-                                    <select name="interest" required className="w-full bg-transparent border-b border-black/20 py-2 focus:border-black outline-none transition-colors font-serif text-xl">
-                                        <option value="" disabled selected>Select your interest</option>
-                                        <option value="Residential Plot">Residential Plot</option>
-                                        <option value="Commercial Land">Commercial Land</option>
-                                        <option value="Investment/Partnership">Investment/Partnership</option>
+                                    <label className="block text-xs font-sans uppercase tracking-widest text-neutral-400 mb-2">Primary Interest</label>
+                                    <select name="interest" required className="w-full bg-transparent border-b border-black/20 py-3 focus:border-black outline-none transition-colors font-serif text-xl appearance-none rounded-none">
+                                        <option value="" disabled selected>Select Investment Type</option>
+                                        <option value="Residential Plot">Residential Layout</option>
+                                        <option value="Commercial Land">Commercial Land Bank</option>
+                                        <option value="Investment/Partnership">Strategic Partnership</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-sans uppercase tracking-widest text-neutral-400 mb-2">YOUR REQUIREMENTS</label>
+                                    <label className="block text-xs font-sans uppercase tracking-widest text-neutral-400 mb-2">Vision & Requirements</label>
                                     <textarea
                                         id="requirements"
                                         name="requirements"
-                                        className="w-full bg-transparent border-b border-black/20 py-2 focus:border-black outline-none transition-colors font-serif text-xl resize-none"
+                                        className="w-full bg-transparent border-b border-black/20 py-3 focus:border-black outline-none transition-colors font-serif text-xl resize-none min-h-[100px]"
                                         rows={4}
                                         required
-                                        placeholder="Share your vision, location preferences, budget range, and timeline."
+                                        placeholder="Describe your ideal location, investment horizon, or specific layout needs..."
                                     />
                                 </div>
                                 {/* Honeypot field - hidden from humans, stops automated bots */}
@@ -136,7 +136,7 @@ import { useState } from 'react';
                                     <input type="text" name="b_phone" tabIndex={-1} autoComplete="off" />
                                 </div>
                                 <div>
-                                    <div className="flex items-start gap-3 mb-6">
+                                    <div className="flex items-start gap-4 mb-8 group">
                                         <input 
                                             type="checkbox" 
                                             id="consent" 
@@ -144,26 +144,26 @@ import { useState } from 'react';
                                             required 
                                             className="mt-1 w-4 h-4 accent-vogue-black border-black/20 cursor-pointer"
                                         />
-                                        <label htmlFor="consent" className="text-[10px] font-sans text-neutral-500 uppercase tracking-widest leading-relaxed cursor-pointer">
-                                            I consent to the collection and processing of my personal data in accordance with the <a href="/privacy" className="underline hover:text-black">Privacy Notice</a>.
+                                        <label htmlFor="consent" className="text-[10px] font-sans text-neutral-500 uppercase tracking-widest leading-relaxed cursor-pointer group-hover:text-black transition-colors">
+                                            I consent to the collection of my details for <span className="underline">exclusive investment updates</span>.
                                         </label>
                                     </div>
                                     <button 
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full bg-vogue-black text-white py-4 text-xs uppercase tracking-[0.2em] hover:bg-neutral-800 transition-colors disabled:opacity-50 disabled:cursor-wait"
+                                        className="w-full bg-vogue-black text-white py-5 text-xs uppercase tracking-[0.25em] hover:bg-neutral-800 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-wait"
                                     >
-                                        {isSubmitting ? 'Opening WhatsApp...' : 'Send Inquiry'}
+                                        {isSubmitting ? 'Connecting...' : 'Request Consultation'}
                                     </button>
                                     <button 
                                         type="button"
                                         onClick={handleEmail}
-                                        className="w-full text-xs font-sans uppercase tracking-[0.2em] text-neutral-500 hover:text-black mt-6 transition-colors border-b border-transparent hover:border-black pb-1"
+                                        className="w-full text-[10px] font-sans uppercase tracking-[0.2em] text-neutral-400 hover:text-black mt-6 transition-colors border-b border-transparent hover:border-black/50 pb-1 w-fit mx-auto block"
                                     >
-                                        Or send via Email
+                                        Prefer Email Communication?
                                     </button>
-                                    <p className="mt-4 text-[10px] font-sans text-neutral-400 text-center uppercase tracking-widest">
-                                        You’ll receive a call or WhatsApp within 24 hours
+                                    <p className="mt-6 text-[9px] font-sans text-neutral-400 text-center uppercase tracking-widest opacity-60">
+                                        Private Client Service • Response within 24h
                                     </p>
                                 </div>
                             </form>
@@ -172,7 +172,7 @@ import { useState } from 'react';
                 </div>
 
                 <div className="py-12 border-t border-black/10 mt-16 flex justify-between text-xs font-sans uppercase tracking-widest text-neutral-400">
-                    <div>Nagpur, India</div>
+                    <div>Wadi, Hazarihpahad, Nagpur</div>
                     <div>&copy; 2026 Sachin Ingle</div>
                 </div>
 

@@ -1,91 +1,82 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import FadeIn from '@/components/animations/fade-in';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function VogueHero() {
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
     return (
-        <section className="relative min-h-screen w-full flex flex-col justify-between pt-32 pb-16 px-8 lg:px-16 overflow-hidden bg-vogue-offwhite text-vogue-black">
-
-            {/* Background Typography Decoration */}
-            <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-[0.03] pointer-events-none flex items-center justify-center overflow-hidden">
-                <span className="font-serif text-[40vw] leading-none whitespace-nowrap">VISION</span>
-            </div>
-
-            <div className="grid lg:grid-cols-12 gap-8 h-full items-end">
-
-                {/* Title Block (Left) */}
-                <div className="lg:col-span-7 z-10 pt-12 lg:pt-0">
-                    <div className="overflow-hidden">
-                        <h1 className={`font-serif text-5xl md:text-7xl lg:text-[10rem] leading-[0.9] text-vogue-black transition-all duration-1000 delay-100 transform ${mounted ? 'translate-y-0' : 'translate-y-full'}`}>
-                            SACHIN <br /> <span className="italic relative">INGLE <span className="absolute -bottom-6 right-0 text-[10px] lg:text-sm font-sans italic tracking-normal opacity-20">Est. 2010</span></span>
-                        </h1>
-                    </div>
-
-                    <div className="overflow-hidden mt-6">
-                        <p className={`font-sans text-xs lg:text-sm uppercase tracking-[0.4em] text-neutral-400 transition-all duration-1000 delay-300 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-                            Land Visionary • Nagpur
-                        </p>
-                    </div>
-
-                    <div className="mt-12 max-w-xl overflow-hidden">
-                        <div className={`transition-all duration-1000 delay-600 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-                            <p className="font-sans text-lg lg:text-xl text-neutral-600 leading-relaxed">
-                                Helping families find land they can trust— with clear titles, in Nagpur&apos;s most promising corridors.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-12 overflow-hidden">
-                        <div className={`transition-all duration-1000 delay-900 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-                            <Link href="/#flagship" className="inline-flex items-center gap-4 text-xs font-sans uppercase tracking-[0.2em] group">
-                                <span className="w-12 h-[1px] bg-black group-hover:w-24 transition-all duration-500"></span>
-                                Explore Portfolio
-                            </Link>
-                            <p className="mt-2 text-[10px] font-sans uppercase tracking-[0.2em] text-neutral-400">View delivered layouts and land projects.</p>
-                        </div>
+        <section className="relative min-h-screen w-full flex items-center bg-executive-navy overflow-hidden">
+            {/* Elegant Background - Clean & Subtle */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(15,23,42,0)_0%,rgba(15,23,42,1)_100%)] z-10 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-executive-blue/10 rounded-full blur-[120px] pointer-events-none" />
+            
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-16 w-full grid lg:grid-cols-2 gap-12 lg:gap-24 relative z-20 pt-24">
+                
+                {/* Text Content */}
+                <div className="flex flex-col justify-center">
+                    <FadeIn delay={0.2} duration={1} direction="up">
+                        <span className="inline-block py-1 px-3 border border-white/20 rounded-full text-[10px] font-sans uppercase tracking-[0.25em] text-white/80 mb-8 w-fit backdrop-blur-sm">
+                            Est. 2010 • Nagpur
+                        </span>
                         
-
-                    </div>
+                        <h1 className="font-display text-6xl lg:text-8xl leading-[0.95] text-white tracking-tight mb-8">
+                            Building <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-executive-platinum to-executive-gray">Legacies.</span>
+                        </h1>
+                        
+                        <p className="font-sans text-lg text-executive-platinum/80 max-w-md leading-relaxed mb-12 font-light">
+                            Curating exclusive land opportunities in Nagpur&apos;s most coveted corridors. A decade of trust, transparency, and timeless value.
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-6">
+                            <Link 
+                                href="/contact" 
+                                className="px-8 py-4 bg-white text-executive-navy font-sans text-xs uppercase tracking-[0.2em] rounded-full hover:bg-executive-platinum transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-xl"
+                            >
+                                Schedule Consultation
+                            </Link>
+                            <Link 
+                                href="/#work" 
+                                className="px-8 py-4 border border-white/20 text-white font-sans text-xs uppercase tracking-[0.2em] rounded-full hover:bg-white/5 transition-all duration-300"
+                            >
+                                View Portfolio
+                            </Link>
+                        </div>
+                    </FadeIn>
                 </div>
 
-                {/* Image Block (Right) */}
-                <div className="lg:col-span-5 h-full relative flex items-end justify-end lg:-mb-16">
-                    <div className="relative w-full aspect-[3/4] max-w-lg">
-                        {/* Decorative Frame */}
-                        <div className={`absolute -top-6 -right-6 w-full h-full border border-black/10 z-0 transition-all duration-1000 delay-500 transform ${mounted ? 'opacity-100' : 'opacity-0'}`}></div>
-
-                        {/* Main Image */}
-                        <div className={`w-full h-full overflow-hidden relative z-10 transition-all duration-1000 delay-300 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-                            <Image
-                                src="/sachin-ingle.jpg"
-                                alt="Sachin Ingle"
-                                fill
-                                className="object-cover grayscale-[20%] contrast-[1.1] hover:scale-105 transition-transform duration-[1.5s]"
-                                priority
-                            />
+                {/* Hero Image - Architecture/Abstract */}
+                <div className="relative h-[60vh] lg:h-[80vh] w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/50 group">
+                    <FadeIn delay={0.4} duration={1.2} className="w-full h-full">
+                        <Image
+                            src="/sachin-ingle.jpg"
+                            alt="Sachin Ingle"
+                            fill
+                            className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                            priority
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-executive-navy/80 via-transparent to-transparent opacity-80" />
+                        
+                        {/* Floating Stats Card */}
+                        <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl">
+                            <div className="grid grid-cols-3 gap-4 text-center divide-x divide-white/20">
+                                <div>
+                                    <div className="text-2xl font-display text-white mb-1">15+</div>
+                                    <div className="text-[9px] uppercase tracking-widest text-white/60">Years</div>
+                                </div>
+                                <div>
+                                    <div className="text-2xl font-display text-white mb-1">50+</div>
+                                    <div className="text-[9px] uppercase tracking-widest text-white/60">Projects</div>
+                                </div>
+                                <div>
+                                    <div className="text-2xl font-display text-white mb-1">100%</div>
+                                    <div className="text-[9px] uppercase tracking-widest text-white/60">Trust</div>
+                                </div>
+                            </div>
                         </div>
-
-                        {/* Floating Badge */}
-                        <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-xl z-20 animate-spin-slow">
-                            <svg viewBox="0 0 100 100" width="100" height="100">
-                                <defs>
-                                    <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
-                                </defs>
-                                <text fontSize="11" fontFamily="var(--font-manrope)" fontWeight="500" letterSpacing="2">
-                                    <textPath xlinkHref="#circle">
-                                        ESTABLISHED 2010 • NAGPUR •
-                                    </textPath>
-                                </text>
-                            </svg>
-                        </div>
-                    </div>
+                    </FadeIn>
                 </div>
             </div>
         </section>

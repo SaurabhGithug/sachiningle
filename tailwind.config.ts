@@ -50,11 +50,12 @@ const config: Config = {
                     "4": "hsl(var(--chart-4))",
                     "5": "hsl(var(--chart-5))",
                 },
-                // Vogue Concept Colors
-                'vogue-black': '#121212',
-                'vogue-white': '#FFFFFF',
-                'vogue-offwhite': '#F9F9F9',
-                'vogue-champagne': '#EAD7C5',
+                // Modern Executive Theme
+                'executive-navy': '#0f172a',    // Deep Navy (Slate-900)
+                'executive-blue': '#2563eb',    // Trust Blue (Blue-600)
+                'executive-platinum': '#e2e8f0', // Platinum (Slate-200)
+                'executive-gray': '#64748b',    // Professional Gray (Slate-500)
+                'executive-white': '#f8fafc',   // Clean White (Slate-50)
             },
             borderRadius: {
                 lg: "var(--radius)",
@@ -63,8 +64,8 @@ const config: Config = {
             },
             fontFamily: {
                 sans: ["var(--font-manrope)", "var(--font-inter)", "system-ui", "sans-serif"],
-                display: ["var(--font-outfit)", "system-ui", "sans-serif"],
-                serif: ["var(--font-playfair)", "serif"],
+                display: ["var(--font-cinzel)", "var(--font-outfit)", "system-ui", "sans-serif"],
+                serif: ["var(--font-cormorant)", "var(--font-playfair)", "serif"],
             },
             fontSize: {
                 '10xl': '10rem',

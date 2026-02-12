@@ -1,79 +1,90 @@
+import FadeIn from '@/components/animations/fade-in';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function VogueWorks() {
     return (
-        <section id="flagship" className="bg-vogue-offwhite pt-32 pb-48">
-            <div id="work" className="px-8 lg:px-16 max-w-[1440px] mx-auto">
-                <div className="flex flex-col lg:flex-row justify-between items-end mb-24">
+        <section id="flagship" className="relative bg-vogue-black pt-32 pb-48 overflow-hidden">
+            {/* Background Texture */}
+            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
+            
+            <div id="work" className="relative z-10 px-8 lg:px-16 max-w-[1440px] mx-auto">
+                <FadeIn delay={0.2} duration={1.0} direction="up" className="flex flex-col lg:flex-row justify-between items-end mb-24">
                    <div className="space-y-4">
-                        <span className="text-xs font-sans uppercase tracking-[0.4em] text-neutral-400">
+                        <span className="text-xs font-sans uppercase tracking-[0.4em] text-vogue-champagne">
                             The Flagship
                         </span>
-                        <h2 className="font-serif text-6xl lg:text-8xl leading-none text-vogue-black">
-                            Saraswati <span className="italic text-neutral-400">Nagari</span>
+                        <h2 className="font-display text-5xl lg:text-8xl leading-none text-white">
+                            Saraswati <span className="italic text-gradient-gold font-serif">Nagari</span>
                         </h2>
                    </div>
-                </div>
+                </FadeIn>
 
                 {/* Flagship Brand Showcase */}
                 <div className="space-y-48">
                     {/* Saraswati Nagari - External Brand */}
-                    <div className="group relative grid lg:grid-cols-12 gap-8 items-center">
-                        <div className="lg:col-span-7 overflow-hidden relative aspect-[4/3] lg:aspect-[16/10]">
-                            <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                            <Image
-                                src="/about_aerial.png"
-                                alt="Saraswati Nagari"
-                                fill
-                                priority
-                                unoptimized
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                className="object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.5s]"
-                            />
+                    <div className="group relative grid lg:grid-cols-12 gap-12 items-center">
+                        <div className="lg:col-span-7 relative aspect-[4/3] lg:aspect-[16/10]">
+                            <FadeIn delay={0.4} duration={1.2} direction="up" className="w-full h-full relative glass-card overflow-hidden">
+                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                                <div className="w-full h-full relative overflow-hidden">
+                                     <Image
+                                        src="/about_aerial.png"
+                                        alt="Saraswati Nagari - Premium Layouts"
+                                        fill
+                                        priority
+                                        sizes="(max-width: 768px) 100vw, 60vw"
+                                        className="object-cover transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s]"
+                                    />
+                                    {/* Overlay Gradient */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                                </div>
+                            </FadeIn>
                         </div>
-                        <div className="lg:col-span-5 lg:pl-12">
-                            <div className="border-l-2 border-vogue-black/10 pl-6 py-2 mb-8">
-                                <p className="font-serif text-2xl italic text-vogue-black mb-1">NMRDA Sanctioned</p>
-                                <p className="font-sans text-[10px] uppercase tracking-widest text-neutral-400">Residential Layouts • Nagpur</p>
-                            </div>
+                        <div className="lg:col-span-5 lg:pl-4">
+                            <FadeIn delay={0.6} duration={1.0} direction="up" className="border-l border-vogue-champagne/30 pl-8 py-2 mb-10">
+                                <p className="font-display text-2xl text-white mb-2">NMRDA Sanctioned</p>
+                                <p className="font-sans text-[10px] uppercase tracking-widest text-vogue-champagne/80">Residential Layouts • Nagpur</p>
+                            </FadeIn>
 
-                            <p className="font-sans text-neutral-500 leading-relaxed mb-8 text-lg">
-                                Nagpur&apos;s most trusted name in residential layouts, known for premium aesthetics, transparent titles, and world-class infrastructure.
-                            </p>
+                            <FadeIn delay={0.7} duration={1.0} direction="up">
+                                <p className="font-serif text-xl text-neutral-300 leading-relaxed mb-10">
+                                    Nagpur&apos;s most trusted name in residential layouts, known for <span className="text-white italic">premium aesthetics</span>, transparent titles, and world-class infrastructure.
+                                </p>
+                            </FadeIn>
 
-                            <ul className="space-y-4 mb-10">
-                                <li className="flex items-start gap-4">
-                                    <span className="w-1.5 h-1.5 bg-black mt-2 shrink-0"></span>
-                                    <p className="font-sans text-sm text-neutral-600">On-time delivery across all phases of development.</p>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <span className="w-1.5 h-1.5 bg-black mt-2 shrink-0"></span>
-                                    <p className="font-sans text-sm text-neutral-600">Layouts planned with wide roads, green pockets, and utility-ready infrastructure.</p>
-                                </li>
-                            </ul>
+                            <FadeIn delay={0.8} duration={1.0} direction="up">
+                                <ul className="space-y-6 mb-12">
+                                    <li className="flex items-start gap-4">
+                                        <span className="w-1.5 h-1.5 bg-vogue-champagne mt-2 shrink-0 rotate-45"></span>
+                                        <p className="font-sans text-sm text-neutral-400 tracking-wide">On-time delivery across all phases of development.</p>
+                                    </li>
+                                    <li className="flex items-start gap-4">
+                                        <span className="w-1.5 h-1.5 bg-vogue-champagne mt-2 shrink-0 rotate-45"></span>
+                                        <p className="font-sans text-sm text-neutral-400 tracking-wide">Layouts planned with wide roads, green pockets, and utility-ready infrastructure.</p>
+                                    </li>
+                                </ul>
+                            </FadeIn>
 
                             {/* Micro Case Highlight */}
-                            <div className="bg-white p-6 border border-black/5 mb-10">
-                                <p className="font-serif text-xl italic mb-1 text-vogue-black">Saraswati Nagari Phase X</p>
-                                <p className="font-sans text-[10px] uppercase tracking-widest text-neutral-400">120+ plots • 100% sold • Delivered in 24 months</p>
-                            </div>
+                            <FadeIn delay={0.9} duration={1.0} direction="up">
+                                <div className="glass p-8 border-l-4 border-l-vogue-champagne mb-12 hover:bg-white/5 transition-colors duration-500">
+                                    <p className="font-display text-xl mb-2 text-white">Saraswati Nagari Phase X</p>
+                                    <p className="font-sans text-[10px] uppercase tracking-widest text-vogue-champagne">120+ plots • 100% sold • Delivered in 24 months</p>
+                                </div>
+                            </FadeIn>
 
-                            <div className="mt-12">
+                            <FadeIn delay={1.0} duration={1.0} direction="up" className="mt-8">
                                 <a 
                                     href="https://saraswati-nagari.vercel.app/" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="text-xs font-sans uppercase tracking-[0.2em] relative group cursor-pointer text-vogue-black inline-block"
+                                    className="px-8 py-4 bg-vogue-champagne text-vogue-black font-sans text-xs uppercase tracking-[0.2em] hover:bg-white transition-all duration-300 inline-block hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
                                 >
-                                    View Full Collection
-                                    <span className="absolute -bottom-2 left-0 w-full h-[1px] bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                                    Discover Portfolio
                                 </a>
-                                <p className="mt-4 text-[9px] font-sans uppercase tracking-[0.2em] text-neutral-400">See all Saraswati Nagari phases and layouts.</p>
-                            </div>
+                            </FadeIn>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

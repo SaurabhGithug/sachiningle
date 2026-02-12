@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Playfair_Display, Manrope } from "next/font/google";
+import { Inter, Outfit, Playfair_Display, Manrope, Cinzel, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import CustomCursor from "@/components/vogue/cursor";
 import ConsentBanner from "@/components/shared/consent-banner";
+import CustomCursor from "@/components/ui/custom-cursor";
+import SmoothScrolling from "@/components/providers/smooth-scrolling";
+import ScrollProgress from "@/components/ui/scroll-progress";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -27,6 +30,19 @@ const playfair = Playfair_Display({
 const manrope = Manrope({
     subsets: ["latin"],
     variable: "--font-manrope",
+    display: "swap",
+});
+
+const cinzel = Cinzel({
+    subsets: ["latin"],
+    variable: "--font-cinzel",
+    display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+    subsets: ["latin"],
+    variable: "--font-cormorant",
+    weight: ["300", "400", "500", "600", "700"],
     display: "swap",
 });
 
@@ -64,6 +80,14 @@ export const metadata: Metadata = {
         siteName: "Sachin Ingle",
         locale: "en_US",
         type: "website",
+        images: [
+            {
+                url: "/sachin-ingle.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Sachin Ingle - Land Visionary",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
@@ -90,7 +114,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} ${manrope.variable} ${playfair.variable} ${outfit.variable}`}>
+        <html lang="en" className={`${inter.variable} ${manrope.variable} ${playfair.variable} ${outfit.variable} ${cinzel.variable} ${cormorant.variable}`}>
             <head>
                 {/* Local SEO Schema Markup */}
                 <script
@@ -106,10 +130,9 @@ export default function RootLayout({
                             "email": "hello@sachiningle.com",
                             "address": {
                                 "@type": "PostalAddress",
-                                "streetAddress": "42, Civil Lines",
+                                "streetAddress": "Wadi, Hazarihpahad",
                                 "addressLocality": "Nagpur",
                                 "addressRegion": "Maharashtra",
-                                "postalCode": "440001",
                                 "addressCountry": "IN"
                             },
                             "areaServed": ["Wardha Road", "Hingna", "Besa", "Pipla", "Nagpur"],
@@ -122,19 +145,21 @@ export default function RootLayout({
                     name="ai:description"
                     content="Sachin Ingle provides NMRDA approved residential plots in Nagpur with 100% clear titles. Specializing in high-growth corridors like Wardha Road and Hingna."
                 />
-                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-                <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
                 <link rel="dns-prefetch" href="https://wa.me" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
             </head>
-            <body className="antialiased font-sans">
-                <CustomCursor />
-                <Navbar />
-                {children}
-                <ConsentBanner />
-                <Footer />
-            </body>
+            <body className={cn(
+          cinzel.variable,
+          cormorant.variable,
+          manrope.variable,
+          "font-sans antialiased bg-executive-white text-executive-gray selection:bg-executive-navy selection:text-white"
+        )}>
+           <SmoothScrolling>
+              <ScrollProgress />
+              <Navbar />
+              {children}
+              <Footer />
+           </SmoothScrolling>
+        </body>
         </html>
     );
 }

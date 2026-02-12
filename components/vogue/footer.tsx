@@ -25,8 +25,8 @@ export default function VogueFooter() {
                         <div>
                             <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-neutral-400 mb-6">Office</h4>
                             <address className="font-sans text-sm not-italic leading-relaxed">
-                                42, Civil Lines <br />
-                                Nagpur, MH 440001 <br />
+                                Wadi, Hazarihpahad <br />
+                                Nagpur, MH <br />
                                 India
                             </address>
                         </div>
