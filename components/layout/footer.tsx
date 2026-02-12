@@ -46,8 +46,8 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-display text-xs uppercase tracking-[0.2em] text-vogue-champagne mb-8 font-semibold">Office</h4>
-                            <address className="font-serif text-lg not-italic leading-loose text-neutral-300">
+                            <h4 className="font-display text-xs uppercase tracking-[0.2em] text-executive-blue mb-8 font-semibold">Office</h4>
+                            <address className="font-serif text-lg not-italic leading-loose text-executive-platinum/80">
                                 Wadi, Hazarihpahad <br />
                                 Nagpur, MH <br />
                                 India

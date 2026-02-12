@@ -51,12 +51,14 @@ const config: Config = {
                     "5": "hsl(var(--chart-5))",
                 },
                 // Modern Executive Theme
-                'executive-navy': '#0f172a',    // Deep Navy (Slate-900)
-                'executive-blue': '#2563eb',    // Trust Blue (Blue-600)
-                'executive-platinum': '#e2e8f0', // Platinum (Slate-200)
-                'executive-gray': '#64748b',    // Professional Gray (Slate-500)
-                'executive-white': '#f8fafc',   // Clean White (Slate-50)
-            },
+                executive: {
+          navy: "#020617", // Slate 950 - Deeper, truer black-blue
+          blue: "#334155", // Slate 700 - Professional steel blue (no purple)
+          platinum: "#F1F5F9", // Slate 100 - Crisp white-gray
+          gray: "#64748B", // Slate 500 - Neutral text
+          white: "#FFFFFF", // Pure white
+          accent: "#0F172A", // Dark accent
+        },    },
             borderRadius: {
                 lg: "var(--radius)",
                 md: "calc(var(--radius) - 2px)",

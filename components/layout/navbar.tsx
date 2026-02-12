@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -18,68 +19,81 @@ export default function Navbar() {
     }, []);
 
     const navItems = [
-        { label: "Philosophy", href: "/about" },
-        { label: "Portfolio", href: "/#work" },
-        { label: "Journal", href: "/journal" },
+        "Philosophy", "Work", "Expertise", "Journal"
     ];
 
     return (
-        <header 
+        <motion.nav
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
-                "fixed top-6 left-0 right-0 z-50 transition-all duration-500 flex justify-center px-4",
-                scrolled ? "top-4" : "top-8"
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out border-b border-transparent",
+                scrolled 
+                    ? "bg-executive-navy/90 backdrop-blur-md py-4 border-white/10 shadow-lg" 
+                    : "bg-transparent py-8"
             )}
         >
-            <nav 
-                className={cn(
-                    "w-full max-w-5xl flex items-center justify-between p-2 pl-6 pr-2 rounded-full border transition-all duration-500",
-                    scrolled 
-                        ? "bg-white/80 backdrop-blur-xl border-white/20 shadow-2xl shadow-executive-navy/10" 
-                        : "bg-white/5 backdrop-blur-sm border-white/10"
-                )}
-            >
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex items-center justify-between">
+                
                 {/* Logo */}
-                <Link href="/" className="font-display text-xl tracking-tight text-executive-navy flex items-center gap-2">
-                    <span className={cn("font-bold transition-colors", scrolled ? "text-executive-navy" : "text-white")}>
-                        SACHIN<span className="font-serif italic text-executive-blue">INGLE</span>
+                <Link href="/" className="relative z-50 group">
+                    <span className={cn(
+                        "font-display text-2xl tracking-tighter transition-colors duration-300",
+                        scrolled ? "text-white" : "text-executive-navy"
+                    )}>
+                        SACHIN<span className="font-serif italic font-light opacity-70">INGLE</span>
                     </span>
                 </Link>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center bg-executive-navy/5 rounded-full px-2 py-1">
+                {/* Desktop Navigation */}
+                <div className="hidden lg:flex items-center gap-10">
                     {navItems.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
+                        <Link 
+                            key={item} 
+                            href={`/#${item.toLowerCase()}`}
                             className={cn(
-                                "px-5 py-2 text-[10px] font-sans uppercase tracking-[0.2em] rounded-full transition-all duration-300 hover:bg-white hover:shadow-sm",
-                                scrolled ? "text-executive-gray hover:text-executive-navy" : "text-white/80 hover:text-executive-navy"
+                                "text-sm uppercase tracking-[0.2em] font-sans transition-all duration-300 relative group",
+                                scrolled ? "text-white/70 hover:text-white" : "text-executive-navy/70 hover:text-executive-navy"
                             )}
                         >
-                            {item.label}
+                            {item}
+                            <span className={cn(
+                                "absolute -bottom-1 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full",
+                                scrolled ? "bg-white" : "bg-executive-navy"
+                            )} />
                         </Link>
                     ))}
-                    <Link
+                </div>
+
+                {/* CTA Button */}
+                <div className="hidden lg:block">
+                    <Link 
                         href="/contact"
-                        className="ml-2 px-6 py-2.5 bg-executive-navy text-white text-[10px] uppercase tracking-[0.2em] rounded-full hover:bg-executive-blue transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                        className={cn(
+                            "px-8 py-3 text-[10px] uppercase tracking-[0.25em] font-bold rounded-full transition-all duration-300 border",
+                            scrolled 
+                                ? "bg-white text-executive-navy border-white hover:bg-executive-platinum" 
+                                : "bg-executive-navy text-white border-executive-navy hover:bg-executive-blue hover:border-executive-blue shadow-xl shadow-executive-navy/10"
+                        )}
                     >
-                        Inquire
+                        Start Project
                     </Link>
                 </div>
 
-                {/* Mobile Toggle */}
-                <button 
+                {/* Mobile Icons */}
+                 <button 
                     onClick={() => setMobileMenuOpen(true)}
                     className={cn(
-                        "md:hidden p-3 rounded-full transition-colors",
-                        scrolled ? "bg-executive-navy/5 text-executive-navy" : "bg-white/10 text-white"
+                        "lg:hidden p-2",
+                        scrolled ? "text-white" : "text-executive-navy"
                     )}
                 >
-                    <Menu className="w-5 h-5" />
+                    <Menu className="w-6 h-6" />
                 </button>
-            </nav>
+            </div>
 
-            {/* Mobile Menu Overlay */}
+             {/* Mobile Menu Overlay */}
             <div className={cn(
                 "fixed inset-0 bg-executive-navy z-[60] transition-transform duration-500 flex flex-col items-center justify-center p-8 space-y-8",
                 mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
@@ -93,12 +107,12 @@ export default function Navbar() {
 
                 {navItems.map((item) => (
                     <Link
-                        key={item.href}
-                        href={item.href}
+                        key={item}
+                        href={`/#${item.toLowerCase()}`}
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-3xl font-display text-white hover:text-executive-blue transition-colors"
                     >
-                        {item.label}
+                        {item}
                     </Link>
                 ))}
                 <Link
@@ -109,6 +123,6 @@ export default function Navbar() {
                     Start a Project
                 </Link>
             </div>
-        </header>
+        </motion.nav>
     );
 }

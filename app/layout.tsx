@@ -47,9 +47,11 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-    title: "Sachin Ingle — Land Visionary | Nagpur",
-    description:
-        "Sachin Ingle: Building land legacies in Nagpur since 2010. Specializing in clear-title development across Wardha Road, Hingna, and Besa.",
+    title: {
+        template: "%s | Sachin Ingle - Land Visionary",
+        default: "Sachin Ingle - Land Visionary | Premium Real Estate in Nagpur",
+    },
+    description: "Curating timeless land legacies and exclusive real estate opportunities in Nagpur's most coveted corridors since 2010.",
     keywords: [
         "residential plots Nagpur",
         "NMRDA approved plots",
@@ -73,13 +75,10 @@ export const metadata: Metadata = {
         canonical: "/",
     },
     openGraph: {
-        title: "Residential Plots in Nagpur | NMRDA Approved | Sachin Ingle",
-        description:
-            "Buy residential plots in Nagpur with clear 7/12 verified titles. NMRDA approved NA plots in Wardha Road, Hingna, Besa.",
+        title: "Sachin Ingle - Land Visionary",
+        description: "Curating timeless land legacies and exclusive real estate opportunities in Nagpur.",
         url: "https://sachiningle.com",
         siteName: "Sachin Ingle",
-        locale: "en_US",
-        type: "website",
         images: [
             {
                 url: "/sachin-ingle.jpg",
@@ -88,11 +87,14 @@ export const metadata: Metadata = {
                 alt: "Sachin Ingle - Land Visionary",
             },
         ],
+        locale: "en_US",
+        type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Residential Plots in Nagpur | Sachin Ingle",
-        description: "NMRDA approved NA plots with clear 7/12 verified titles.",
+        title: "Sachin Ingle - Land Visionary",
+        description: "Premium land legacies in Nagpur.",
+        images: ["/sachin-ingle.jpg"],
         creator: "@sachiningle",
     },
     robots: {
