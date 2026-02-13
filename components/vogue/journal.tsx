@@ -13,7 +13,7 @@ const articles = [
         excerpt: 'With MIHAN expansion, Nagpur Metro Phase 2, and the Samruddhi Expressway now operational, land prices along Wardha Road, Besa, and Hingna corridors are appreciating 15-25% annually.',
         date: 'Feb 10, 2026',
         readTime: '5 min read',
-        image: '/about_aerial.png',
+        image: '/nagpur_growth_chart_abstract.png',
     },
     {
         slug: 'nmrda-approved-plots-guide',
@@ -22,7 +22,7 @@ const articles = [
         excerpt: 'Everything you need to know about NMRDA-sanctioned layouts — why approval matters, how to verify layout numbers, and which areas offer the best NMRDA approved residential plots.',
         date: 'Feb 5, 2026',
         readTime: '8 min read',
-        image: '/about_aerial.png',
+        image: '/nmrda_blueprint_plot.png',
     },
     {
         slug: 'best-areas-plot-investment-nagpur',
@@ -31,7 +31,7 @@ const articles = [
         excerpt: 'From Wardha Road (₹2,200-4,500/sqft) to Besa-Pipla (₹4,000-6,500/sqft) — a data-driven ranking of the best localities for residential plot investment in Nagpur.',
         date: 'Jan 28, 2026',
         readTime: '10 min read',
-        image: '/about_aerial.png',
+        image: '/nagpur_map_investment_hotspots.png',
     },
 ];
 
