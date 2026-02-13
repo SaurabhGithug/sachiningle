@@ -3,7 +3,7 @@ import { Inter, Outfit, Playfair_Display, Manrope, Cinzel, Cormorant_Garamond } 
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import ConsentBanner from "@/components/shared/consent-banner";
+
 import CustomCursor from "@/components/ui/custom-cursor";
 import SmoothScrolling from "@/components/providers/smooth-scrolling";
 import ScrollProgress from "@/components/ui/scroll-progress";
@@ -129,7 +129,7 @@ export default function RootLayout({
                             "description": "Residential plots in Nagpur with clear titles. NMRDA approved NA plots.",
                             "url": "https://sachiningle.com",
                             "telephone": "+91-9822-555-123",
-                            "email": "hello@sachiningle.com",
+                            "email": "connect@sachiningle.com",
                             "address": {
                                 "@type": "PostalAddress",
                                 "streetAddress": "Wadi, Hazarihpahad",

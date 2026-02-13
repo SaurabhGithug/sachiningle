@@ -69,7 +69,7 @@ import { useState } from 'react';
         const subject = `Inquiry: ${interest} - ${name}`;
         const body = `Hi Sachin,\n\nI am ${name}.\nI am interested in ${interest}.\n\nMy Requirements:\n${requirements}\n\nPlease contact me at: ${phone}`;
         
-        window.location.href = `mailto:hello@sachiningle.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = `mailto:connect@sachiningle.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     };
 
     return (
@@ -96,7 +96,7 @@ import { useState } from 'react';
                                 </div>
                                 <div>
                                     <h3 className="text-xs font-sans uppercase tracking-[0.2em] text-neutral-400 mb-2">Email</h3>
-                                    <a href="mailto:hello@sachiningle.com" className="font-serif text-2xl hover:italic cursor-pointer transition-all">hello@sachiningle.com</a>
+                                    <a href="mailto:connect@sachiningle.com" className="font-serif text-2xl hover:italic cursor-pointer transition-all">connect@sachiningle.com</a>
                                 </div>
                             </div>
                         </div>

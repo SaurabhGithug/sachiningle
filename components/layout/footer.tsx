@@ -24,9 +24,9 @@ export default function Footer() {
                         <div className="mb-8 space-y-8">
                             <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2">Send a brief about your requirements (budget, preferred location, and timeline).</p>
                             <div className="flex flex-col gap-6">
-                                <a href="mailto:hello@sachiningle.com"
+                                <a href="mailto:connect@sachiningle.com"
                                     className="inline-flex items-center gap-4 text-sm font-sans uppercase tracking-[0.2em] group hover:text-executive-blue transition-colors duration-300">
-                                    hello@sachiningle.com
+                                    connect@sachiningle.com
                                     <span className="w-8 h-[1px] bg-executive-blue group-hover:w-16 transition-all duration-500"></span>
                                 </a>
                                 <Link href="/contact#inquiry-form" className="inline-block text-xs font-sans uppercase tracking-[0.3em] font-semibold border border-executive-platinum/30 px-10 py-5 w-fit hover:bg-executive-blue hover:border-executive-blue hover:text-white transition-all duration-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]">
@@ -40,6 +40,7 @@ export default function Footer() {
                         <div>
                             <h4 className="font-display text-xs uppercase tracking-[0.2em] text-executive-blue mb-8 font-semibold">Connect</h4>
                             <ul className="social-icons space-y-6 font-sans text-sm text-executive-platinum">
+                                <li><Link href="/careers" className="hover:text-white transition-all duration-300 font-medium tracking-wide flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300"></span>Careers</Link></li>
                                 <li><a href="https://www.instagram.com/sachin_ingle8866" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all duration-300 font-medium tracking-wide flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300"></span>Instagram</a></li>
                                 <li><a href="https://www.linkedin.com/in/sachin-ingle-065698392/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all duration-300 font-medium tracking-wide flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300"></span>LinkedIn</a></li>
                                 <li><a href="https://twitter.com/sachiningle" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all duration-300 font-medium tracking-wide flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-[1px] bg-white transition-all duration-300"></span>Twitter</a></li>
@@ -62,7 +63,7 @@ export default function Footer() {
                 <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 items-center">
                     <div>&copy; {new Date().getFullYear()} Sachin Ingle</div>
                     <div className="flex gap-6">
-                        <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+
                         <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                     </div>
                 </div>

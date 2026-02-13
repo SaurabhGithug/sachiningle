@@ -5,6 +5,7 @@ import VogueStory from "@/components/vogue/story";
 import VogueWorks from "@/components/vogue/works";
 import VoguePhilosophy from "@/components/vogue/philosophy";
 import VogueTrustBadges from "@/components/vogue/trust-badges";
+import VogueJournal from "@/components/vogue/journal";
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
             <VogueStory />
             <VogueWorks />
             <VogueTrustBadges />
+            <VogueJournal />
             <VoguePhilosophy />
         </main>
     );

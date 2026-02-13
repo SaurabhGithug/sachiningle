@@ -23,7 +23,7 @@ export default function FadeIn({
     delay = 0,
     duration = 0.8,
     fullWidth = false,
-    viewportAmount = 0.3,
+    viewportAmount = 0.05,
     once = true,
 }: FadeInProps) {
     const ref = useRef(null);

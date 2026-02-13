@@ -7,8 +7,8 @@ export default function VogueFooter() {
                         <h2 className="font-serif text-7xl lg:text-9xl tracking-tight mb-8">
                             Let&apos;s <br /> <span className="italic">Talk.</span>
                         </h2>
-                        <a href="mailto:hello@sachiningle.com" className="inline-flex items-center gap-4 text-sm font-sans uppercase tracking-[0.2em] group">
-                            hello@sachiningle.com
+                        <a href="mailto:connect@sachiningle.com" className="inline-flex items-center gap-4 text-sm font-sans uppercase tracking-[0.2em] group">
+                            connect@sachiningle.com
                             <span className="w-8 h-[1px] bg-black group-hover:w-16 transition-all duration-500"></span>
                         </a>
                     </div>
