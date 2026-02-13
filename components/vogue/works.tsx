@@ -22,7 +22,7 @@ export default function Works() {
                         <FadeIn delay={0.1} duration={0.6} direction="up" className="w-full h-full relative">
                             <SpotlightCard className="w-full h-full rounded-2xl overflow-hidden" spotlightColor="rgba(255, 255, 255, 0.25)">
                                  <Image
-                                    src="/about_aerial.png"
+                                    src="/about_aerial.jpg"
                                     alt="Saraswati Nagari - Premium Layouts"
                                     fill
                                     priority

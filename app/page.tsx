@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import VogueHero from "@/components/vogue/hero";
-import VogueStory from "@/components/vogue/story";
+
+const VogueStory = dynamic(() => import("@/components/vogue/story"), { ssr: true });
 
 const VogueWorks = dynamic(() => import("@/components/vogue/works"), { ssr: true });
 const VoguePhilosophy = dynamic(() => import("@/components/vogue/philosophy"), { ssr: true });

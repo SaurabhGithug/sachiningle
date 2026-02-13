@@ -48,7 +48,7 @@ export default function StoryPage() {
                             <div className="lg:col-span-7 order-1 lg:order-2">
                                 <div className="aspect-[16/10] relative overflow-hidden">
                                      <Image
-                                        src="/about_aerial.png"
+                                        src="/about_aerial.jpg"
                                         alt="First Project"
                                         fill
                                         className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-105"
@@ -62,7 +62,7 @@ export default function StoryPage() {
                              <div className="lg:col-span-7">
                                 <div className="aspect-[16/10] relative overflow-hidden">
                                      <Image
-                                        src="/emerald_estate.png"
+                                        src="/emerald_estate.jpg"
                                         alt="Emerald Estate"
                                         fill
                                         className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-105"
@@ -99,7 +99,7 @@ export default function StoryPage() {
                             <div className="lg:col-span-7 order-1 lg:order-2">
                                 <div className="aspect-[16/11] relative overflow-hidden shadow-2xl">
                                      <Image
-                                        src="/saraswati-nagari.png"
+                                        src="/saraswati-nagari.jpg"
                                         alt="Saraswati Nagari Flagship"
                                         fill
                                         unoptimized

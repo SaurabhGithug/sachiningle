@@ -65,8 +65,8 @@ const config: Config = {
                 sm: "calc(var(--radius) - 4px)",
             },
             fontFamily: {
-                sans: ["var(--font-manrope)", "var(--font-inter)", "system-ui", "sans-serif"],
-                display: ["var(--font-cinzel)", "var(--font-outfit)", "system-ui", "sans-serif"],
+                sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
+                display: ["var(--font-cinzel)", "system-ui", "sans-serif"],
                 serif: ["var(--font-cormorant)", "var(--font-playfair)", "serif"],
             },
             fontSize: {

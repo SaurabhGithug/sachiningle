@@ -1,25 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Playfair_Display, Manrope, Cinzel, Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display, Manrope, Cinzel, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-
-import CustomCursor from "@/components/ui/custom-cursor";
-import SmoothScrolling from "@/components/providers/smooth-scrolling";
-import ScrollProgress from "@/components/ui/scroll-progress";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({
-    subsets: ["latin"],
-    variable: "--font-inter",
-    display: "swap",
-});
-
-const outfit = Outfit({
-    subsets: ["latin"],
-    variable: "--font-outfit",
-    display: "swap",
-});
+// Lazy-load non-critical client components
+const SmoothScrolling = dynamic(() => import("@/components/providers/smooth-scrolling"), { ssr: false });
+const ScrollProgress = dynamic(() => import("@/components/ui/scroll-progress"), { ssr: false });
 
 const playfair = Playfair_Display({
     subsets: ["latin"],
@@ -116,8 +105,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} ${manrope.variable} ${playfair.variable} ${outfit.variable} ${cinzel.variable} ${cormorant.variable}`}>
+        <html lang="en" className={`${manrope.variable} ${playfair.variable} ${cinzel.variable} ${cormorant.variable}`}>
             <head>
+                {/* Preload hero image to eliminate resource load delay */}
+                <link rel="preload" href="/sachin-ingle.jpg" as="image" type="image/jpeg" />
                 {/* Local SEO Schema Markup */}
                 <script
                     type="application/ld+json"
@@ -150,18 +141,18 @@ export default function RootLayout({
                 <link rel="dns-prefetch" href="https://wa.me" />
             </head>
             <body className={cn(
-          cinzel.variable,
-          cormorant.variable,
-          manrope.variable,
-          "font-sans antialiased bg-executive-white text-executive-gray selection:bg-executive-navy selection:text-white"
-        )}>
-           <SmoothScrolling>
-              <ScrollProgress />
-              <Navbar />
-              {children}
-              <Footer />
-           </SmoothScrolling>
-        </body>
+              cinzel.variable,
+              cormorant.variable,
+              manrope.variable,
+              "font-sans antialiased bg-executive-white text-executive-gray selection:bg-executive-navy selection:text-white"
+            )}>
+               <SmoothScrolling>
+                  <ScrollProgress />
+                  <Navbar />
+                  {children}
+                  <Footer />
+               </SmoothScrolling>
+            </body>
         </html>
     );
 }

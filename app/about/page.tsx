@@ -17,7 +17,7 @@ export default function AboutPage() {
             {/* Image Scroller */}
             <div className="w-full h-[50vh] lg:h-[70vh] relative overflow-hidden mb-32">
                 <Image
-                    src="/saraswati-nagari.png"
+                    src="/saraswati-nagari.jpg"
                     alt="Saraswati Nagari Land Development"
                     fill
                     className="object-cover"

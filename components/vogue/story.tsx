@@ -55,7 +55,7 @@ export default function VogueStory() {
                                 }}
                             >
                                 <Image 
-                                    src="/sachin-story-bg.png" 
+                                    src="/sachin-story-bg.jpg" 
                                     alt="Sachin Ingle Portrait" 
                                     fill 
                                     className="object-cover scale-110"
