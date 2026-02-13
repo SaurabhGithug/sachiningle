@@ -24,13 +24,13 @@ export default function VoguePhilosophy() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="philosophy" className="py-32 bg-vogue-black text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-neutral-900/20 blur-3xl pointer-events-none"></div>
+        <section ref={sectionRef} id="philosophy" className="py-32 bg-executive-navy text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-executive-blue/20 blur-3xl pointer-events-none"></div>
 
             <div className="px-8 lg:px-16 grid lg:grid-cols-12 gap-16 relative z-10">
                 <div className="lg:col-span-4">
                     <div className="w-full h-[1px] bg-white/20 mb-8"></div>
-                    <span className="text-xs font-sans uppercase tracking-[0.2em] text-neutral-400">The Philosophy</span>
+                    <span className="text-xs font-sans uppercase tracking-[0.2em] text-executive-gray">The Philosophy</span>
                 </div>
 
                 <div className="lg:col-span-8">
@@ -40,16 +40,16 @@ export default function VoguePhilosophy() {
 
                     <div className={`grid grid-cols-2 lg:grid-cols-3 gap-12 mt-24 transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
                         <div>
-                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Vision</h4>
-                            <p className="font-serif text-2xl text-neutral-300">Sustainable <br />Growth</p>
+                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-executive-gray/70 mb-4">Vision</h4>
+                            <p className="font-serif text-2xl text-executive-platinum">Sustainable <br />Growth</p>
                         </div>
                         <div>
-                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Standard</h4>
-                            <p className="font-serif text-2xl text-neutral-300">Uncompromised <br />Quality</p>
+                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-executive-gray/70 mb-4">Standard</h4>
+                            <p className="font-serif text-2xl text-executive-platinum">Uncompromised <br />Quality</p>
                         </div>
                         <div>
-                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Promise</h4>
-                            <p className="font-serif text-2xl text-neutral-300">Clear <br />Titles</p>
+                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-executive-gray/70 mb-4">Promise</h4>
+                            <p className="font-serif text-2xl text-executive-platinum">Clear <br />Titles</p>
                         </div>
                     </div>
                 </div>

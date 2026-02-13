@@ -8,7 +8,7 @@ import VogueTrustBadges from "@/components/vogue/trust-badges";
 
 export default function Home() {
     return (
-        <main className="min-h-screen bg-vogue-offwhite text-vogue-black selection:bg-black selection:text-white">
+        <main className="min-h-screen bg-white text-executive-navy selection:bg-executive-navy selection:text-white">
             <VogueHero />
             <VogueStory />
             <VogueWorks />

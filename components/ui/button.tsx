@@ -9,7 +9,7 @@ const buttonVariants = cva(
     {
         variants: {
             variant: {
-                default: "bg-vogue-champagne text-vogue-black hover:bg-vogue-gold-dark hover:shadow-lg transition-all duration-300 font-sans tracking-widest uppercase",
+                default: "bg-executive-navy text-white hover:bg-executive-blue hover:shadow-lg transition-all duration-300 font-sans tracking-widest uppercase",
                 destructive:
                     "bg-destructive text-destructive-foreground hover:bg-destructive/90",
                 outline:
@@ -18,9 +18,9 @@ const buttonVariants = cva(
                     "bg-secondary text-secondary-foreground hover:bg-secondary/80",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
-                luxury: "bg-vogue-champagne text-vogue-black hover:bg-vogue-gold-dark hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500 font-sans tracking-[0.2em] uppercase text-xs border border-transparent hover:scale-105",
-                "outline-luxury": "border border-vogue-champagne text-vogue-champagne bg-transparent hover:bg-vogue-champagne hover:text-vogue-black transition-all duration-500 font-sans tracking-[0.2em] uppercase text-xs hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]",
-                "ghost-luxury": "text-vogue-champagne hover:bg-vogue-champagne/10 hover:text-vogue-gold-light transition-all duration-300 font-sans tracking-[0.2em] uppercase text-xs",
+                luxury: "bg-executive-navy text-white hover:bg-white hover:text-executive-navy hover:border-executive-navy hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 font-sans tracking-[0.2em] uppercase text-xs border border-transparent hover:scale-105 active:scale-95",
+                "outline-luxury": "border border-executive-navy text-executive-navy bg-transparent hover:bg-executive-navy hover:text-white transition-all duration-500 font-sans tracking-[0.2em] uppercase text-xs hover:shadow-[0_0_30px_rgba(2,6,23,0.2)]",
+                "ghost-luxury": "text-executive-navy hover:bg-executive-navy/5 hover:text-executive-blue transition-all duration-300 font-sans tracking-[0.2em] uppercase text-xs relative overflow-hidden after:absolute after:inset-0 after:bg-executive-navy/5 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300",
             },
             size: {
                 default: "h-10 px-4 py-2",
