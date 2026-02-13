@@ -57,7 +57,7 @@ export default function VogueHero() {
                                 src="/sachin-ingle.jpg"
                                 alt="Sachin Ingle"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-[center_20%] lg:object-center"
                                 priority
                                 sizes="(max-width: 768px) 100vw, 50vw"
                             />
