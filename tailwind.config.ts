@@ -50,15 +50,25 @@ const config: Config = {
                     "4": "hsl(var(--chart-4))",
                     "5": "hsl(var(--chart-5))",
                 },
-                // Modern Executive Theme
+                // Premium Luxury Executive Theme
                 executive: {
-          navy: "#020617", // Slate 950 - Deeper, truer black-blue
-          blue: "#334155", // Slate 700 - Professional steel blue (no purple)
-          platinum: "#F1F5F9", // Slate 100 - Crisp white-gray
-          gray: "#64748B", // Slate 500 - Neutral text
-          white: "#FFFFFF", // Pure white
-          accent: "#0F172A", // Dark accent
-        },    },
+                    navy: "#020617",
+                    blue: "#334155",
+                    platinum: "#F1F5F9",
+                    gray: "#475569",       // Slate 600 — improved contrast (was 500)
+                    white: "#FFFFFF",
+                    accent: "#0F172A",
+                    gold: "#C9A96E",       // Champagne gold — luxury accent
+                    cream: "#FAF7F2",      // Warm cream — editorial background
+                    charcoal: "#1A1A1A",   // Rich black for deep sections
+                    warmgray: "#6B7280",   // Gray 500 — secondary text
+                },
+                // Vogue tokens (footer compatibility)
+                vogue: {
+                    black: "#020617",
+                    offwhite: "#FAF7F2",
+                },
+            },
             borderRadius: {
                 lg: "var(--radius)",
                 md: "calc(var(--radius) - 2px)",

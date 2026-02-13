@@ -10,7 +10,7 @@ const VogueJournal = dynamic(() => import("@/components/vogue/journal"), { ssr: 
 
 export default function Home() {
     return (
-        <main className="min-h-screen bg-white text-executive-navy selection:bg-executive-navy selection:text-white">
+        <main className="min-h-screen bg-executive-cream text-executive-navy selection:bg-executive-navy selection:text-white">
             <VogueHero />
             <VogueStory />
             <VogueWorks />

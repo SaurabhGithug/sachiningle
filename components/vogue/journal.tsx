@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import FadeIn from '@/components/animations/fade-in';
-import SpotlightCard from '@/components/ui/spotlight-card';
 
 const articles = [
     {
@@ -37,15 +36,18 @@ const articles = [
 
 export default function VogueJournal() {
     return (
-        <section id="journal" className="py-12 lg:py-32 bg-white relative">
-            <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
+        <section id="journal" className="py-16 lg:py-36 bg-executive-cream relative">
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
                 {/* Header */}
                 <FadeIn delay={0.1} duration={0.6} direction="up">
                     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 lg:mb-20">
                         <div>
-                            <span className="text-xs font-sans uppercase tracking-[0.3em] text-executive-blue block mb-4">Insights &amp; Guides</span>
-                            <h2 className="font-display text-4xl lg:text-5xl xl:text-7xl text-executive-navy">
-                                The <br className="hidden lg:block" /> <span className="italic font-serif text-executive-gray/60">Journal</span>
+                            <div className="flex items-center gap-4 mb-4">
+                                <span className="h-[2px] w-8 bg-executive-gold"></span>
+                                <span className="text-xs font-sans uppercase tracking-[0.3em] text-executive-gold">Insights & Guides</span>
+                            </div>
+                            <h2 className="font-display text-4xl md:text-5xl lg:text-7xl text-executive-navy mt-4">
+                                The <span className="italic font-serif text-executive-gold">Journal</span>
                             </h2>
                             <p className="font-serif text-base lg:text-lg text-executive-gray mt-4 max-w-lg">
                                 Expert insights on buying land in Nagpur — market analysis, buyer guides, and investment strategies for plots and layouts.
@@ -53,23 +55,20 @@ export default function VogueJournal() {
                         </div>
                         <Link 
                             href="/journal" 
-                            className="mt-6 lg:mt-0 text-xs font-sans uppercase tracking-[0.2em] text-executive-navy hover:text-executive-blue transition-colors group flex items-center gap-3"
+                            className="mt-6 lg:mt-0 text-xs font-sans uppercase tracking-[0.2em] text-executive-navy hover:text-executive-gold transition-colors duration-500 group flex items-center gap-3"
                         >
                             View all articles
-                            <span className="w-6 h-[1px] bg-executive-navy group-hover:w-12 group-hover:bg-executive-blue transition-all duration-500"></span>
+                            <span className="w-6 h-[1px] bg-executive-navy group-hover:w-12 group-hover:bg-executive-gold transition-all duration-500"></span>
                         </Link>
                     </div>
                 </FadeIn>
 
                 {/* Articles Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {articles.map((article, idx) => (
-                        <FadeIn key={idx} delay={0.15 * (idx + 1)} duration={0.6} direction="up">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mt-12 lg:mt-20">
+                    {articles.map((article, i) => (
+                        <FadeIn key={i} delay={0.1 * i} duration={0.6} direction="up">
                             <Link href={`/journal/${article.slug}`} className="block h-full">
-                                <SpotlightCard 
-                                    className="group h-full flex flex-col overflow-hidden rounded-2xl hover:shadow-xl transition-shadow duration-500"
-                                    spotlightColor="rgba(37, 99, 235, 0.08)"
-                                >
+                                <article className="group h-full flex flex-col overflow-hidden bg-white border border-executive-navy/5 hover:shadow-xl hover:shadow-executive-navy/5 hover:-translate-y-1 transition-all duration-700">
                                     {/* Image */}
                                     <div className="relative aspect-[16/10] overflow-hidden">
                                         <Image
@@ -77,29 +76,29 @@ export default function VogueJournal() {
                                             alt={article.title}
                                             fill
                                             sizes="(max-width: 768px) 100vw, 33vw"
-                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                            className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                                         />
                                         <div className="absolute top-4 left-4">
-                                            <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm text-[10px] uppercase tracking-wider font-bold text-executive-navy rounded-full">
+                                            <span className="px-3 py-1.5 text-[10px] uppercase tracking-wider font-semibold text-executive-gold border border-executive-gold/30 bg-white/90 backdrop-blur-sm">
                                                 {article.category}
                                             </span>
                                         </div>
                                     </div>
 
                                     {/* Content */}
-                                    <div className="p-8 flex flex-col flex-1">
-                                        <h3 className="font-display text-xl text-executive-navy mb-3 group-hover:text-executive-blue transition-colors leading-snug">
+                                    <div className="p-6 lg:p-8 flex flex-col flex-1">
+                                        <h3 className="font-display text-xl text-executive-navy mb-3 group-hover:text-executive-gold transition-colors duration-500 leading-snug">
                                             {article.title}
                                         </h3>
-                                        <p className="font-serif text-sm text-executive-gray leading-relaxed mb-6 flex-1">
+                                        <p className="font-sans text-sm text-executive-gray leading-relaxed mb-6 flex-1">
                                             {article.excerpt}
                                         </p>
-                                        <div className="flex justify-between items-center pt-6 border-t border-executive-navy/5">
-                                            <span className="text-[10px] font-sans uppercase tracking-wider text-executive-gray">{article.date}</span>
-                                            <span className="text-[10px] font-sans uppercase tracking-wider text-executive-blue font-semibold">{article.readTime}</span>
+                                        <div className="flex justify-between items-center pt-5 border-t border-executive-navy/5">
+                                            <span className="text-[10px] font-sans uppercase tracking-wider text-executive-warmgray">{article.date}</span>
+                                            <span className="text-[10px] font-sans uppercase tracking-wider text-executive-gold font-semibold">{article.readTime}</span>
                                         </div>
                                     </div>
-                                </SpotlightCard>
+                                </article>
                             </Link>
                         </FadeIn>
                     ))}

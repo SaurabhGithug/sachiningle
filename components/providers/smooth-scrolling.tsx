@@ -1,13 +1,27 @@
 "use client";
 
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Lenis from "lenis";
 
 export default function SmoothScrolling({ children }: { children: ReactNode }) {
+    const [isDesktop, setIsDesktop] = useState(false);
+
     useEffect(() => {
+        // Only enable smooth scrolling on desktop (768px+)
+        const mql = window.matchMedia("(min-width: 768px)");
+        setIsDesktop(mql.matches);
+
+        const handleChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+        mql.addEventListener("change", handleChange);
+        return () => mql.removeEventListener("change", handleChange);
+    }, []);
+
+    useEffect(() => {
+        if (!isDesktop) return;
+
         const lenis = new Lenis({
-            duration: 1.0, // Reduced from 1.2 for snappier feel
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            duration: 1.0,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             orientation: "vertical",
             gestureOrientation: "vertical",
             smoothWheel: true,
@@ -25,7 +39,7 @@ export default function SmoothScrolling({ children }: { children: ReactNode }) {
         return () => {
             lenis.destroy();
         };
-    }, []);
+    }, [isDesktop]);
 
     return <>{children}</>;
 }

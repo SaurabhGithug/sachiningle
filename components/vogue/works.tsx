@@ -1,40 +1,52 @@
 import React from 'react';
 import Image from 'next/image';
-import SpotlightCard from '@/components/ui/spotlight-card';
 import FadeIn from '@/components/animations/fade-in';
 
 export default function Works() {
     return (
-        <section id="work" className="py-12 lg:py-32 bg-executive-white relative">
-            <div className="container mx-auto px-4">
-                <div className="mb-10 lg:mb-20">
+        <section id="work" className="py-16 lg:py-36 bg-white relative">
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+                {/* Section Header */}
+                <div className="mb-12 lg:mb-24">
                     <FadeIn delay={0.1} duration={0.6} direction="up">
-                        <span className="text-xs font-sans uppercase tracking-[0.3em] text-executive-blue block mb-4">Portfolio</span>
-                        <h2 className="font-display text-4xl lg:text-7xl text-executive-navy mb-8">
-                            Signature <br /> <span className="italic font-serif text-executive-gray/60">Developments</span>
+                        <div className="flex items-center gap-4 mb-6">
+                            <span className="h-[2px] w-8 bg-executive-gold"></span>
+                            <span className="text-xs font-sans uppercase tracking-[0.3em] text-executive-gold">Portfolio</span>
+                        </div>
+                        <h2 className="font-display text-4xl md:text-5xl lg:text-7xl text-executive-navy mb-4">
+                            Signature <br /> <span className="italic font-serif text-executive-gold/80">Developments</span>
                         </h2>
+                        <div className="h-px w-full max-w-xs bg-executive-navy/10 mt-8"></div>
                     </FadeIn>
                 </div>
 
-                {/* Saraswati Nagari - External Brand */}
-                <div className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                {/* Project — Saraswati Nagari */}
+                <div className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+                    {/* Image */}
                     <div className="lg:col-span-7 relative aspect-[4/3] lg:aspect-[16/10]">
                         <FadeIn delay={0.1} duration={0.6} direction="up" className="w-full h-full relative">
-                            <SpotlightCard className="w-full h-full rounded-2xl overflow-hidden" spotlightColor="rgba(255, 255, 255, 0.25)">
+                            <div className="w-full h-full overflow-hidden relative">
                                  <Image
                                     src="/about_aerial.jpg"
                                     alt="Saraswati Nagari - Premium Layouts"
                                     fill
                                     priority
                                     sizes="(max-width: 768px) 100vw, 60vw"
-                                    className="object-cover transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s]"
+                                    className="object-cover transform scale-100 group-hover:scale-[1.03] transition-transform duration-[2s] ease-out"
                                 />
                                 {/* Overlay Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-executive-navy/80 via-transparent to-transparent opacity-40" />
-                            </SpotlightCard>
+                                <div className="absolute inset-0 bg-gradient-to-t from-executive-navy/60 via-executive-navy/10 to-transparent" />
+                                
+                                {/* Numbered label */}
+                                <div className="absolute top-6 left-6 z-10">
+                                    <span className="font-display text-6xl lg:text-8xl text-white/10 leading-none">01</span>
+                                </div>
+                            </div>
                         </FadeIn>
                     </div>
-                    <div className="lg:col-span-5 lg:pl-8">
+                    
+                    {/* Content */}
+                    <div className="lg:col-span-5 lg:pl-4">
                          <FadeIn delay={0.15} duration={0.6} direction="up">
                             <h3 className="font-display text-3xl lg:text-4xl mb-4 lg:mb-6 text-executive-navy">Saraswati Nagari</h3>
                             <p className="font-serif text-base lg:text-lg text-executive-gray leading-relaxed mb-6 lg:mb-8">
@@ -42,12 +54,12 @@ export default function Works() {
                             </p>
                         </FadeIn>
 
-                        {/* Micro Case Highlight */}
+                        {/* Case Highlight */}
                         <FadeIn delay={0.2} duration={0.6} direction="up">
-                            <SpotlightCard className="p-6 lg:p-8 border-l-4 border-l-executive-navy bg-executive-platinum/10 mb-8 lg:mb-12 rounded-lg" spotlightColor="rgba(2, 6, 23, 0.05)">
+                            <div className="p-6 lg:p-8 border-l-[3px] border-l-executive-gold bg-executive-cream/60 mb-8 lg:mb-12">
                                 <p className="font-display text-lg lg:text-xl mb-2 text-executive-navy">Saraswati Nagari Phase X</p>
                                 <p className="font-sans text-[10px] uppercase tracking-widest text-executive-gray">120+ plots • 100% sold • Delivered in 24 months</p>
-                            </SpotlightCard>
+                            </div>
                         </FadeIn>
 
                         <FadeIn delay={0.25} duration={0.6} direction="up" className="mt-8">
@@ -55,9 +67,10 @@ export default function Works() {
                                 href="https://saraswati-nagari.vercel.app/" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="px-8 lg:px-10 py-4 lg:py-5 bg-executive-navy text-white font-sans text-xs uppercase tracking-[0.2em] hover:bg-executive-blue transition-all duration-300 inline-block shadow-xl shadow-executive-navy/20 hover:-translate-y-1"
+                                className="w-full sm:w-auto text-center justify-center inline-flex items-center gap-4 px-8 lg:px-10 py-4 lg:py-5 bg-executive-navy text-white font-sans text-xs uppercase tracking-[0.2em] hover:bg-executive-charcoal transition-all duration-500 group/btn"
                             >
                                 Discover Portfolio
+                                <span className="w-6 h-px bg-executive-gold group-hover/btn:w-10 transition-all duration-500"></span>
                             </a>
                         </FadeIn>
                     </div>

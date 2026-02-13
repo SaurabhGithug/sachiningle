@@ -1,100 +1,94 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import FadeIn from '@/components/animations/fade-in';
 
 export default function VogueStory() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
+    const imageRef = useRef<HTMLDivElement>(null);
 
-    const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-    const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
+    // Clean parallax — vertical shift only, no rotation
+    useEffect(() => {
+        let ticking = false;
+
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (!containerRef.current || !imageRef.current) {
+                        ticking = false;
+                        return;
+                    }
+                    const rect = containerRef.current.getBoundingClientRect();
+                    const vh = window.innerHeight;
+                    const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
+                    const y = -60 * progress;
+                    imageRef.current.style.transform = `translateY(${y}px)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     return (
-        <section ref={containerRef} id="story" className="relative py-16 lg:py-32 bg-executive-platinum overflow-hidden">
-            {/* Liquid Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-white rounded-full mix-blend-overlay blur-3xl opacity-60 animate-blob" />
-                <div className="absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] bg-executive-blue/10 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-blob animation-delay-2000" />
-                <div className="absolute bottom-[-10%] left-[20%] w-[60vw] h-[60vw] bg-executive-navy/5 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-blob animation-delay-4000" />
-            </div>
+        <section ref={containerRef} id="story" className="relative py-20 lg:py-36 bg-executive-cream overflow-hidden">
+            {/* Clean warm background — no blobs */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/60 to-transparent pointer-events-none" />
 
             <div className="max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10">
-                <div className="flex flex-col lg:flex-row gap-20 items-center">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
                     
-                    {/* Liquid Image Container */}
-                    <motion.div 
-                        style={{ y: y1, rotate }}
-                        className="w-full lg:w-1/2 relative"
+                    {/* Editorial Image — Clean rectangular crop */}
+                    <div 
+                        ref={imageRef}
+                        className="w-full lg:w-1/2 relative will-change-transform"
                     >
                          <div className="relative w-full aspect-[4/5] max-w-lg mx-auto">
-                            {/* Morphing Blob Mask */}
-                            <motion.div 
-                                className="absolute inset-0 overflow-hidden shadow-2xl shadow-executive-navy/20"
-                                style={{
-                                    borderRadius: "45% 55% 50% 50% / 55% 45% 55% 45%",
-                                }}
-                                animate={{
-                                    borderRadius: [
-                                        "45% 55% 50% 50% / 55% 45% 55% 45%",
-                                        "55% 45% 60% 40% / 50% 60% 30% 70%",
-                                        "40% 60% 45% 55% / 45% 55% 60% 40%",
-                                        "45% 55% 50% 50% / 55% 45% 55% 45%"
-                                    ]
-                                }}
-                                transition={{
-                                    duration: 12,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                }}
-                            >
+                            {/* Decorative gold corner accents */}
+                            <div className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-executive-gold/50 z-20" />
+                            <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-executive-gold/50 z-20" />
+                            
+                            <div className="relative w-full h-full overflow-hidden shadow-2xl shadow-executive-navy/15">
                                 <Image 
                                     src="/sachin-story-bg.jpg" 
                                     alt="Sachin Ingle Portrait" 
                                     fill 
-                                    className="object-cover scale-110"
+                                    className="object-cover scale-105"
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-tr from-executive-navy/40 to-transparent mix-blend-multiply" />
-                            </motion.div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-executive-navy/30 to-transparent" />
+                            </div>
 
-                            {/* Floating Card Element */}
-                            <motion.div 
-                                style={{ y: y2 }}
-                                className="absolute -bottom-8 -right-4 lg:-bottom-12 lg:-right-6 w-40 lg:w-64 bg-white/80 backdrop-blur-md p-4 lg:p-6 rounded-2xl shadow-xl border border-white/20"
+                            {/* Floating Quote Card */}
+                            <div 
+                                className="absolute -bottom-6 -right-4 lg:-bottom-10 lg:-right-8 w-48 lg:w-64 bg-executive-navy p-5 lg:p-6 shadow-xl z-30"
                             >
                                 <div className="space-y-2">
-                                    <div className="h-1 w-8 lg:w-12 bg-executive-blue/30 rounded-full" />
-                                    <p className="font-serif text-xl lg:text-2xl text-executive-navy italic tracking-tight">&quot;Vision over View.&quot;</p>
-                                    <p className="text-[9px] lg:text-[10px] uppercase tracking-widest text-executive-gray">Est. 2010</p>
+                                    <div className="h-[2px] w-8 lg:w-12 bg-executive-gold" />
+                                    <p className="font-serif text-lg lg:text-xl text-white italic tracking-tight leading-snug">&quot;Vision over View.&quot;</p>
+                                    <p className="text-[9px] lg:text-[10px] uppercase tracking-widest text-executive-gold">Est. 2010</p>
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Text Content */}
-                    <div className="w-full lg:w-1/2 lg:pl-16">
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <span className="text-xs font-sans uppercase tracking-[0.4em] text-executive-blue mb-4 block">
-                                The Origin Theme
+                    <div className="w-full lg:w-1/2 lg:pl-8">
+                        <FadeIn direction="right" duration={0.8}>
+                            <span className="text-xs font-sans uppercase tracking-[0.4em] text-executive-gold mb-4 block">
+                                The Origin
                             </span>
-                            <h2 className="font-display text-[2.75rem] lg:text-7xl leading-[1.1] text-executive-navy mb-8 tracking-tight">
+                            <h2 className="font-display text-[2.25rem] md:text-5xl lg:text-7xl leading-[1.1] text-executive-navy mb-8 tracking-tight">
                                 Crafting <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-executive-blue to-executive-navy opacity-80 italic font-serif">Destinies.</span>
+                                <span className="italic font-serif text-executive-gold">Destinies.</span>
                             </h2>
                             
-                            <div className="space-y-8 text-base lg:text-lg font-light leading-relaxed text-executive-gray">
+                            <div className="space-y-6 text-base lg:text-lg font-light leading-relaxed text-executive-gray">
                                 <p>
                                     Nagpur isn&apos;t just geography to me. It&apos;s the canvas where families paint their futures. From the pulsing arteries of <span className="font-medium text-executive-navy">Wardha Road</span> to the quiet promise of Besa-Pipla, I read the land&apos;s potential before others see the path.
                                 </p>
@@ -103,21 +97,18 @@ export default function VogueStory() {
                                 </p>
                             </div>
 
-                            <div className="mt-12 flex flex-wrap gap-2.5">
+                            <div className="mt-12 flex flex-wrap gap-2.5 justify-start md:justify-start">
                                 {["Strategic Land Banks", "10+ Completed Layouts", "Visionary Approach"].map((tag, i) => (
-                                    <motion.span 
+                                    <span 
                                         key={i}
-                                        initial={{ opacity: 0, y: 10 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.1 * i, duration: 0.5 }}
-                                        className="px-4 py-2 rounded-full border border-executive-navy/10 text-[9px] lg:text-[10px] uppercase tracking-[0.15em] text-executive-navy bg-white/70 backdrop-blur-md shadow-sm hover:border-executive-blue/30 transition-colors"
+                                        className="px-4 py-2 border border-executive-gold/25 text-[9px] lg:text-[10px] uppercase tracking-[0.15em] text-executive-navy bg-white/80 hover:border-executive-gold hover:bg-executive-gold/5 transition-all duration-500 animate-fadeInUp"
+                                        style={{ animationDelay: `${0.1 * i}s`, animationFillMode: 'both' }}
                                     >
                                         {tag}
-                                    </motion.span>
+                                    </span>
                                 ))}
                             </div>
-                        </motion.div>
+                        </FadeIn>
                     </div>
 
                 </div>
