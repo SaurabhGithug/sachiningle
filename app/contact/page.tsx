@@ -1,36 +1,54 @@
 "use client";
 import { useState } from 'react';
+import { z } from 'zod';
 
+// Define Zod schema for form validation
+const contactSchema = z.object({
+    name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name is too long"),
+    phone: z.string().regex(/^\+?[\d\s-]{10,}$/, "Please enter a valid phone number (at least 10 digits)"),
+    interest: z.enum(["Residential Plot", "Commercial Land", "Investment/Partnership"], {
+        errorMap: () => ({ message: "Please select a valid investment type" })
+    }),
+    requirements: z.string().min(10, "Please provide more details").max(1000, "Requirement description is too long"),
+    honeyPot: z.string().max(0, "Bot detected"), // Should remain empty
+    consent: z.literal("on", {
+        errorMap: () => ({ message: "You must consent to continue" })
+    }),
+});
 
-
- export default function ContactPage() {
+export default function ContactPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
 
         const formData = new FormData(e.currentTarget);
         
-        // Honeypot check - reject if hidden field is filled
-        if (formData.get('b_phone')) {
-            console.warn('Bot detected via honeypot');
-            return;
-        }
+        // Extract data
+        const rawData = {
+            name: (formData.get('name') as string)?.trim(),
+            phone: (formData.get('phone') as string)?.replace(/[^\d+]/g, ''),
+            interest: formData.get('interest') as string,
+            requirements: (formData.get('requirements') as string)?.trim(),
+            honeyPot: formData.get('b_phone') as string, // Maps to hidden input
+            consent: formData.get('consent') as string,
+        };
 
-        const name = (formData.get('name') as string).trim().slice(0, 100);
-        const phone = (formData.get('phone') as string).replace(/[^\d+]/g, '');
-        const interest = formData.get('interest') as string;
-        const requirements = (formData.get('requirements') as string).trim().slice(0, 500);
+        // Validate with Zod
+        const result = contactSchema.safeParse(rawData);
 
-        if (phone.length < 10) {
-            alert('Please enter a valid phone number (at least 10 digits).');
+        if (!result.success) {
+            const firstError = result.error.errors[0].message;
+            alert(firstError);
             setIsSubmitting(false);
             return;
         }
 
+        const data = result.data;
+
         // Construct the WhatsApp message
-        const message = `Hi Sachin, I am ${name}. I am interested in ${interest}.\n\nMy Requirements: ${requirements}\n\nPlease contact me at: ${phone}`;
+        const message = `Hi Sachin, I am ${data.name}. I am interested in ${data.interest}.\n\nMy Requirements: ${data.requirements}\n\nPlease contact me at: ${data.phone}`;
         const encodedMessage = encodeURIComponent(message);
         
         // WhatsApp link - using your business number
@@ -46,28 +64,34 @@ import { useState } from 'react';
     const handleEmail = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         
-        // Get form data directly from the DOM to avoid huge refactoring
+        // Get form data directly from the DOM
         const form = e.currentTarget.closest('form');
         if (!form) return;
         
         const formData = new FormData(form);
-        const name = (formData.get('name') as string).trim();
-        const phone = (formData.get('phone') as string).replace(/[^\d+]/g, '');
-        const interest = formData.get('interest') as string;
-        const requirements = (formData.get('requirements') as string).trim();
+        const rawData = {
+            name: (formData.get('name') as string)?.trim(),
+            phone: (formData.get('phone') as string)?.replace(/[^\d+]/g, ''),
+            interest: formData.get('interest') as string,
+            requirements: (formData.get('requirements') as string)?.trim(),
+            honeyPot: formData.get('b_phone') as string,
+            consent: formData.get('consent') as string,
+        };
 
-        if (phone.length < 10) {
-            alert('Please enter a valid phone number before sending via email.');
-            return;
+        // Basic validation for email button click
+        // We do a lighter check here or full Zod check? Let's do full check for consistency.
+        const result = contactSchema.safeParse(rawData);
+
+        if (!result.success) {
+             const firstError = result.error.errors[0].message;
+             alert(firstError);
+             return;
         }
+        
+        const data = result.data;
 
-        if (!name || !phone || !interest) {
-            alert('Please fill in the required fields first.');
-            return;
-        }
-
-        const subject = `Inquiry: ${interest} - ${name}`;
-        const body = `Hi Sachin,\n\nI am ${name}.\nI am interested in ${interest}.\n\nMy Requirements:\n${requirements}\n\nPlease contact me at: ${phone}`;
+        const subject = `Inquiry: ${data.interest} - ${data.name}`;
+        const body = `Hi Sachin,\n\nI am ${data.name}.\nI am interested in ${data.interest}.\n\nMy Requirements:\n${data.requirements}\n\nPlease contact me at: ${data.phone}`;
         
         window.location.href = `mailto:connect@sachiningle.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     };

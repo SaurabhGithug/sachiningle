@@ -1,11 +1,11 @@
-'use client';
-
+import dynamic from 'next/dynamic';
 import VogueHero from "@/components/vogue/hero";
 import VogueStory from "@/components/vogue/story";
-import VogueWorks from "@/components/vogue/works";
-import VoguePhilosophy from "@/components/vogue/philosophy";
-import VogueTrustBadges from "@/components/vogue/trust-badges";
-import VogueJournal from "@/components/vogue/journal";
+
+const VogueWorks = dynamic(() => import("@/components/vogue/works"), { ssr: true });
+const VoguePhilosophy = dynamic(() => import("@/components/vogue/philosophy"), { ssr: true });
+const VogueTrustBadges = dynamic(() => import("@/components/vogue/trust-badges"), { ssr: true });
+const VogueJournal = dynamic(() => import("@/components/vogue/journal"), { ssr: true });
 
 export default function Home() {
     return (
