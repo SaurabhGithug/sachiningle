@@ -24,32 +24,32 @@ export default function VoguePhilosophy() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="philosophy" className="py-20 lg:py-32 bg-executive-navy text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-executive-blue/20 blur-3xl pointer-events-none"></div>
+        <section ref={sectionRef} id="philosophy" className="py-16 lg:py-32 bg-executive-navy text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-executive-blue/10 lg:bg-executive-blue/20 blur-[120px] pointer-events-none"></div>
 
-            <div className="px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 relative z-10">
-                <div className="lg:col-span-4">
-                    <div className="w-full h-[1px] bg-white/20 mb-6 lg:mb-8"></div>
-                    <span className="text-xs font-sans uppercase tracking-[0.2em] text-executive-gray">The Philosophy</span>
+            <div className="px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 relative z-10">
+                <div className="lg:col-span-3">
+                    <div className="w-12 lg:w-full h-[1px] bg-white/30 mb-4 lg:mb-8"></div>
+                    <span className="text-[10px] lg:text-xs font-sans uppercase tracking-[0.3em] text-executive-gray/80">The Philosophy</span>
                 </div>
 
-                <div className="lg:col-span-8">
-                    <p className={`font-serif text-xl sm:text-2xl lg:text-6xl leading-[1.3] lg:leading-[1.2] transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-                        &quot;I don&apos;t just develop land; I build the foundation for future legacies. Every square foot is chosen with the precision of an artist and the foresight of a visionary.&quot;
+                <div className="lg:col-span-9">
+                    <p className={`font-serif text-2xl sm:text-3xl lg:text-7xl leading-[1.2] lg:leading-[1.1] transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'} tracking-tight`}>
+                        &quot;I don&apos;t just develop land; I build the foundation for future legacies. Every square foot is chosen with <span className="text-executive-blue italic">precision</span> and <span className="text-executive-platinum italic">vision</span>.&quot;
                     </p>
 
-                    <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mt-12 lg:mt-24 transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-                        <div>
-                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-executive-gray/70 mb-4">Vision</h4>
-                            <p className="font-serif text-2xl text-executive-platinum">Sustainable <br />Growth</p>
+                    <div className={`grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-12 mt-12 lg:mt-24 transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+                        <div className="relative pl-6 border-l border-white/10 shrink-0">
+                            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-executive-gray/70 mb-3">Vision</h4>
+                            <p className="font-serif text-xl lg:text-2xl text-executive-platinum leading-tight">Sustainable <br className="hidden lg:block"/>Growth</p>
                         </div>
-                        <div>
-                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-executive-gray/70 mb-4">Standard</h4>
-                            <p className="font-serif text-2xl text-executive-platinum">Uncompromised <br />Quality</p>
+                        <div className="relative pl-6 border-l border-white/10 shrink-0">
+                            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-executive-gray/70 mb-3">Standard</h4>
+                            <p className="font-serif text-xl lg:text-2xl text-executive-platinum leading-tight">Uncompromised <br className="hidden lg:block"/>Quality</p>
                         </div>
-                        <div>
-                            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-executive-gray/70 mb-4">Promise</h4>
-                            <p className="font-serif text-2xl text-executive-platinum">Clear <br />Titles</p>
+                        <div className="relative pl-6 border-l border-white/10 shrink-0">
+                            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-executive-gray/70 mb-3">Promise</h4>
+                            <p className="font-serif text-xl lg:text-2xl text-executive-platinum leading-tight">Clear <br className="hidden lg:block"/>Titles</p>
                         </div>
                     </div>
                 </div>

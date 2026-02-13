@@ -25,7 +25,7 @@ export default function Footer() {
                             <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2">Send a brief about your requirements (budget, preferred location, and timeline).</p>
                             <div className="flex flex-col gap-6">
                                 <a href="mailto:connect@sachiningle.com"
-                                    className="inline-flex items-center gap-4 text-sm font-sans uppercase tracking-[0.2em] group hover:text-executive-blue transition-colors duration-300">
+                                    className="inline-flex items-center gap-4 text-sm font-sans tracking-[0.2em] group hover:text-executive-blue transition-colors duration-300">
                                     connect@sachiningle.com
                                     <span className="w-8 h-[1px] bg-executive-blue group-hover:w-16 transition-all duration-500"></span>
                                 </a>
