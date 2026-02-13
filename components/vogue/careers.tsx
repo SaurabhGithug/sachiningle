@@ -93,8 +93,10 @@ export default function VogueCareers() {
                                     <span className="text-xs font-sans text-executive-blue font-semibold uppercase tracking-wider">
                                         {job.location}
                                     </span>
-                                    <Button variant="ghost-luxury" className="px-0 hover:bg-transparent hover:text-executive-blue">
-                                        Apply Now &rarr;
+                                    <Button variant="ghost-luxury" className="px-0 hover:bg-transparent hover:text-executive-blue" asChild>
+                                        <a href={`mailto:connect@sachiningle.com?subject=Application for ${job.role} - ${job.location}`}>
+                                            Apply Now &rarr;
+                                        </a>
                                     </Button>
                                 </div>
                             </SpotlightCard>
