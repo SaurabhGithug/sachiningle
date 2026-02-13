@@ -24,7 +24,7 @@ export default function VoguePhilosophy() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="philosophy" className="py-16 lg:py-32 bg-executive-navy text-white relative overflow-hidden">
+        <section ref={sectionRef} id="philosophy" className="py-12 lg:py-32 bg-executive-navy text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-executive-blue/10 lg:bg-executive-blue/20 blur-[120px] pointer-events-none"></div>
 
             <div className="px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 relative z-10">

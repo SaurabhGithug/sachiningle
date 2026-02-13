@@ -5,7 +5,7 @@ import FadeIn from '@/components/animations/fade-in';
 
 export default function Works() {
     return (
-        <section id="work" className="py-16 lg:py-32 bg-executive-white relative">
+        <section id="work" className="py-12 lg:py-32 bg-executive-white relative">
             <div className="container mx-auto px-4">
                 <div className="mb-10 lg:mb-20">
                     <FadeIn delay={0.1} duration={0.6} direction="up">

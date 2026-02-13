@@ -37,7 +37,7 @@ const articles = [
 
 export default function VogueJournal() {
     return (
-        <section id="journal" className="py-32 bg-white relative">
+        <section id="journal" className="py-12 lg:py-32 bg-white relative">
             <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
                 {/* Header */}
                 <FadeIn delay={0.1} duration={0.6} direction="up">

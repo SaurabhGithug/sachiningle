@@ -23,8 +23,8 @@ export default function VogueHero() {
                             </span>
                         </div>
                         
-                        <h1 className="font-display text-4xl lg:text-7xl xl:text-8xl leading-[1.1] text-executive-navy tracking-tight mb-6 lg:mb-8">
-                            Building <br />
+                        <h1 className="font-display text-[2.5rem] lg:text-7xl xl:text-8xl leading-[1.1] text-executive-navy tracking-tight mb-6 lg:mb-8 whitespace-nowrap lg:whitespace-normal">
+                            Building <span className="hidden lg:inline"><br /></span>
                             <span className="italic font-serif text-executive-gray/80">Legacy.</span>
                         </h1>
                         
