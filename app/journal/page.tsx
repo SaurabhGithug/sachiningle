@@ -15,7 +15,7 @@ const allArticles = [
         date: '2026-02-10',
         displayDate: 'Feb 10, 2026',
         readTime: '5 min read',
-        image: '/about_aerial.png',
+        image: '/nagpur_growth_chart_abstract.png',
         keywords: ['nagpur land investment', 'plot investment nagpur', 'nagpur real estate 2026', 'MIHAN plots', 'Samruddhi Expressway land'],
     },
     {
@@ -26,7 +26,7 @@ const allArticles = [
         date: '2026-02-05',
         displayDate: 'Feb 5, 2026',
         readTime: '8 min read',
-        image: '/about_aerial.png',
+        image: '/nmrda_blueprint_plot.png',
         keywords: ['NMRDA approved plots nagpur', 'NMRDA layout verification', 'authority approved plots nagpur', 'NMRDA sanctioned layouts'],
     },
     {
@@ -37,7 +37,7 @@ const allArticles = [
         date: '2026-01-28',
         displayDate: 'Jan 28, 2026',
         readTime: '10 min read',
-        image: '/about_aerial.png',
+        image: '/nagpur_map_investment_hotspots.png',
         keywords: ['best areas buy plot nagpur', 'Wardha Road plots', 'Besa plots nagpur', 'residential plots nagpur', 'plot rates nagpur'],
     },
     {
@@ -48,7 +48,7 @@ const allArticles = [
         date: '2026-01-20',
         displayDate: 'Jan 20, 2026',
         readTime: '12 min read',
-        image: '/about_aerial.png',
+        image: '/vertex_hub.png',
         keywords: ['7/12 extract nagpur', 'plot buying checklist nagpur', 'NA order nagpur', 'land documents verification nagpur', 'encumbrance certificate nagpur'],
     },
     {
@@ -59,7 +59,7 @@ const allArticles = [
         date: '2026-01-15',
         displayDate: 'Jan 15, 2026',
         readTime: '7 min read',
-        image: '/about_aerial.png',
+        image: '/saraswati-nagari.png',
         keywords: ['nagpur metro phase 2 land prices', 'nagpur metro real estate impact', 'plots near nagpur metro', 'land price appreciation nagpur'],
     },
     {
@@ -70,7 +70,7 @@ const allArticles = [
         date: '2026-01-10',
         displayDate: 'Jan 10, 2026',
         readTime: '9 min read',
-        image: '/about_aerial.png',
+        image: '/emerald_estate.png',
         keywords: ['MIHAN nagpur plots', 'MIHAN land investment', 'MIHAN SEZ nagpur', 'plots near MIHAN airport nagpur', 'MIHAN land rates'],
     },
     {
@@ -81,7 +81,7 @@ const allArticles = [
         date: '2026-01-05',
         displayDate: 'Jan 5, 2026',
         readTime: '8 min read',
-        image: '/about_aerial.png',
+        image: '/sachin-story-bg.png',
         keywords: ['NA conversion nagpur', 'agricultural to residential land nagpur', 'NA plots nagpur', 'non agricultural land nagpur', 'land use conversion maharashtra'],
     },
     {
@@ -103,7 +103,7 @@ const allArticles = [
         date: '2025-12-20',
         displayDate: 'Dec 20, 2025',
         readTime: '7 min read',
-        image: '/about_aerial.png',
+        image: '/sachin-story-2.png',
         keywords: ['gated community plots nagpur', 'premium plots nagpur', 'gated layout nagpur', 'secure plots nagpur'],
     },
     {
@@ -114,7 +114,7 @@ const allArticles = [
         date: '2025-12-15',
         displayDate: 'Dec 15, 2025',
         readTime: '11 min read',
-        image: '/about_aerial.png',
+        image: '/nagpur_growth_chart_abstract.png',
         keywords: ['nagpur land price forecast', 'nagpur property future value', 'nagpur real estate growth 2030', 'best zone buy land nagpur'],
     },
     {
@@ -125,7 +125,7 @@ const allArticles = [
         date: '2025-12-10',
         displayDate: 'Dec 10, 2025',
         readTime: '6 min read',
-        image: '/about_aerial.png',
+        image: '/saraswati-nagari.png',
         keywords: ['affordable plots nagpur', 'cheap plots nagpur', 'budget plots nagpur', 'plots under 20 lakh nagpur', 'low cost land nagpur'],
     },
     {
@@ -136,7 +136,7 @@ const allArticles = [
         date: '2025-12-05',
         displayDate: 'Dec 5, 2025',
         readTime: '7 min read',
-        image: '/about_aerial.png',
+        image: '/vertex_hub.png',
         keywords: ['Hingna plots nagpur', 'Butibori land investment', 'industrial corridor nagpur plots', 'Hingna land rates'],
     },
 ];
