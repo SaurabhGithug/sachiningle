@@ -51,7 +51,7 @@ export default function VogueHero() {
 
                 {/* Hero Image - Minimalist Presentation */}
                 <div className="relative aspect-[4/5] lg:h-[85vh] lg:aspect-auto w-full order-1 lg:order-2 lg:pl-12">
-                    <FadeIn delay={0.15} duration={0.6} className="w-full h-full relative">
+                    <div className="w-full h-full relative">
                         <div className="relative w-full h-full rounded-[2rem] lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
                              <Image
                                 src="/sachin-ingle.jpg"
@@ -59,7 +59,7 @@ export default function VogueHero() {
                                 fill
                                 className="object-cover object-center"
                                 priority
-                                sizes="(max-width: 768px) 100vw, 50vw"
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
                             />
                             {/* Subtle Grade Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-executive-navy/20 to-transparent mix-blend-multiply opacity-40" />
@@ -79,7 +79,7 @@ export default function VogueHero() {
                                 </div>
                             </div>
                         </div>
-                    </FadeIn>
+                    </div>
                 </div>
             </div>
         </section>
