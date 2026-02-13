@@ -1,15 +1,8 @@
-'use client';
-
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import FadeIn from "@/components/animations/fade-in";
 
 export default function StoryPage() {
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        setIsVisible(true);
-    }, []);
 
     return (
         <main className="min-h-screen bg-white text-vogue-black selection:bg-black selection:text-white">
