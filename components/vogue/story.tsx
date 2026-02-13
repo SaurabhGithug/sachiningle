@@ -17,7 +17,7 @@ export default function VogueStory() {
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
 
     return (
-        <section ref={containerRef} id="story" className="relative py-32 bg-executive-platinum overflow-hidden">
+        <section ref={containerRef} id="story" className="relative py-16 lg:py-32 bg-executive-platinum overflow-hidden">
             {/* Liquid Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-white rounded-full mix-blend-overlay blur-3xl opacity-60 animate-blob" />
@@ -67,12 +67,12 @@ export default function VogueStory() {
                             {/* Floating Card Element */}
                             <motion.div 
                                 style={{ y: y2 }}
-                                className="absolute -bottom-12 -right-6 w-48 lg:w-64 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20"
+                                className="absolute -bottom-8 -right-4 lg:-bottom-12 lg:-right-6 w-40 lg:w-64 bg-white/80 backdrop-blur-md p-4 lg:p-6 rounded-2xl shadow-xl border border-white/20"
                             >
                                 <div className="space-y-2">
-                                    <div className="h-1 w-12 bg-executive-blue/30 rounded-full" />
-                                    <p className="font-serif text-2xl text-executive-navy italic">&quot;Vision over View.&quot;</p>
-                                    <p className="text-[10px] uppercase tracking-widest text-executive-gray">Est. 2010</p>
+                                    <div className="h-1 w-8 lg:w-12 bg-executive-blue/30 rounded-full" />
+                                    <p className="font-serif text-xl lg:text-2xl text-executive-navy italic tracking-tight">&quot;Vision over View.&quot;</p>
+                                    <p className="text-[9px] lg:text-[10px] uppercase tracking-widest text-executive-gray">Est. 2010</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -81,7 +81,7 @@ export default function VogueStory() {
                     {/* Text Content */}
                     <div className="w-full lg:w-1/2 lg:pl-16">
                         <motion.div
-                            initial={{ opacity: 0, x: 50 }}
+                            initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
@@ -89,12 +89,12 @@ export default function VogueStory() {
                             <span className="text-xs font-sans uppercase tracking-[0.4em] text-executive-blue mb-4 block">
                                 The Origin Theme
                             </span>
-                            <h2 className="font-display text-5xl lg:text-7xl leading-[1.1] text-executive-navy mb-8">
+                            <h2 className="font-display text-[2.75rem] lg:text-7xl leading-[1.1] text-executive-navy mb-8 tracking-tight">
                                 Crafting <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-executive-blue to-executive-navy opacity-80 italic font-serif">Destinies.</span>
                             </h2>
                             
-                            <div className="space-y-8 text-lg font-light leading-relaxed text-executive-gray">
+                            <div className="space-y-8 text-base lg:text-lg font-light leading-relaxed text-executive-gray">
                                 <p>
                                     Nagpur isn&apos;t just geography to me. It&apos;s the canvas where families paint their futures. From the pulsing arteries of <span className="font-medium text-executive-navy">Wardha Road</span> to the quiet promise of Besa-Pipla, I read the land&apos;s potential before others see the path.
                                 </p>
@@ -103,11 +103,18 @@ export default function VogueStory() {
                                 </p>
                             </div>
 
-                            <div className="mt-12 flex flex-wrap gap-4">
+                            <div className="mt-12 flex flex-wrap gap-2.5">
                                 {["Strategic Land Banks", "10+ Completed Layouts", "Visionary Approach"].map((tag, i) => (
-                                    <span key={i} className="px-4 py-2 rounded-full border border-executive-navy/10 text-[10px] uppercase tracking-widest text-executive-navy bg-white/50 backdrop-blur-sm">
+                                    <motion.span 
+                                        key={i}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.1 * i, duration: 0.5 }}
+                                        className="px-4 py-2 rounded-full border border-executive-navy/10 text-[9px] lg:text-[10px] uppercase tracking-[0.15em] text-executive-navy bg-white/70 backdrop-blur-md shadow-sm hover:border-executive-blue/30 transition-colors"
+                                    >
                                         {tag}
-                                    </span>
+                                    </motion.span>
                                 ))}
                             </div>
                         </motion.div>
