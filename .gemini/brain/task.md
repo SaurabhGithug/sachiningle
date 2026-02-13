@@ -1,0 +1,44 @@
+# GitHub Push Task List
+
+- [x] Investigate current scroll implementation <!-- id: 0 -->
+- [x] Optimize smooth scrolling configuration <!-- id: 1 -->
+  - [x] Tune Lenis settings (lerp, duration, etc.) <!-- id: 2 -->
+  - [x] Check for conflicting CSS/JS <!-- id: 3 -->
+- [x] Verify fix <!-- id: 4 -->
+- [x] Push to GitHub <!-- id: 5 -->
+  - [x] Identify correct GitHub account/repo (SaurabhGithug) <!-- id: 6 -->
+  - [x] Create repo 'sachiningle' <!-- id: 9 -->
+  - [x] Update remote URL <!-- id: 7 -->
+  - [x] Push code <!-- id: 8 -->
+- [x] Fix Broken Links <!-- id: 16 -->
+  - [x] Check/Fix contact page (verified existence) <!-- id: 20 -->
+  - [x] Fix 'Apply' links in Careers page (functional mailto with asChild) <!-- id: 18 -->
+- [x] Fix Journal Thumbnails <!-- id: 21 -->
+  - [x] Restore correct image paths in journal.tsx <!-- id: 22 -->
+- [x] Fix Hero Image on Mobile <!-- id: 23 -->
+  - [x] Optimize hero image object-position <!-- id: 24 -->
+  - [x] Ensure perfect centering (removed negative margins) <!-- id: 32 -->
+- [x] Refine Mobile Hero Design <!-- id: 25 -->
+  - [x] Adjust mobile height and object position (set to aspect-[4/5] and rounded-[2rem]) <!-- id: 26 -->
+  - [x] Review overlays and spacing (gap reduced to gap-12) <!-- id: 27 -->
+- [x] Optimize Middle Sections for Mobile <!-- id: 28 -->
+  - [x] Reduce padding in Works, Philosophy, and Trust Badges <!-- id: 29 -->
+  - [x] Adjust typography scaling for mobile <!-- id: 30 -->
+  - [x] Tighten grid gaps <!-- id: 31 -->
+- [x] Implement Journal Article Pages <!-- id: 32 -->
+  - [x] Create dynamic route app/journal/[slug]/page.tsx <!-- id: 33 -->
+  - [x] Populate content for the 3 existing articles <!-- id: 34 -->
+- [x] Further Refine Philosophy Section for Mobile <!-- id: 35 -->
+  - [x] Optimize typography and line-height for mobile quote <!-- id: 36 -->
+  - [x] Reconfigure stats grid for a more compact mobile layout <!-- id: 37 -->
+  - [x] Adjust decorative elements for better mobile composition <!-- id: 38 -->
+- [x] Final Mobile Refinements & Global Optimizations <!-- id: 39 -->
+  - [x] "Building Legacy" on one row in Hero mobile <!-- id: 40 -->
+  - [x] Reduce vertical spacing between all sections <!-- id: 41 -->
+  - [x] Update walkthrough with "Mobile Optimization" skills <!-- id: 42 -->
+  - [x] Push all updates to GitHub <!-- id: 43 -->
+- [x] Deep Mobile Optimization Phase 2 <!-- id: 44 -->
+  - [x] Optimize "Strategic Land Banks" tags in Story section <!-- id: 45 -->
+  - [x] Create dedicated `mobile_optimization.md` skill artifact <!-- id: 46 -->
+  - [x] Review all sections for further micro-optimizations <!-- id: 47 -->
+  - [x] Push Phase 2 updates to GitHub <!-- id: 48 -->
