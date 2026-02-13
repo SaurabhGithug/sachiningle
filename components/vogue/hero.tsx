@@ -11,7 +11,7 @@ export default function VogueHero() {
             <div className="absolute inset-0 bg-executive-white z-0" />
             <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-executive-platinum/50 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 translate-x-1/4" />
             
-            <div className="max-w-[1440px] mx-auto px-6 lg:px-16 w-full grid lg:grid-cols-2 gap-16 items-center relative z-20 pt-24 min-h-[90vh]">
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-16 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-20 pt-24 min-h-[90vh]">
                 
                 {/* Text Content */}
                 <div className="flex flex-col justify-center order-2 lg:order-1 relative z-20">
@@ -50,14 +50,14 @@ export default function VogueHero() {
                 </div>
 
                 {/* Hero Image - Minimalist Presentation */}
-                <div className="relative h-[50vh] lg:h-[85vh] w-full order-1 lg:order-2 pl-0 lg:pl-12 -mx-6 lg:mx-0 w-[calc(100%+3rem)] lg:w-full">
+                <div className="relative aspect-[4/5] lg:h-[85vh] lg:aspect-auto w-full order-1 lg:order-2 lg:pl-12">
                     <FadeIn delay={0.15} duration={0.6} className="w-full h-full relative">
-                        <div className="relative w-full h-full lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
+                        <div className="relative w-full h-full rounded-[2rem] lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
                              <Image
                                 src="/sachin-ingle.jpg"
                                 alt="Sachin Ingle"
                                 fill
-                                className="object-cover object-[center_20%] lg:object-center"
+                                className="object-cover object-center"
                                 priority
                                 sizes="(max-width: 768px) 100vw, 50vw"
                             />

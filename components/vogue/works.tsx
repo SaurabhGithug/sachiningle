@@ -5,12 +5,12 @@ import FadeIn from '@/components/animations/fade-in';
 
 export default function Works() {
     return (
-        <section id="work" className="py-32 bg-executive-white relative">
+        <section id="work" className="py-16 lg:py-32 bg-executive-white relative">
             <div className="container mx-auto px-4">
-                <div className="mb-20">
+                <div className="mb-10 lg:mb-20">
                     <FadeIn delay={0.1} duration={0.6} direction="up">
                         <span className="text-xs font-sans uppercase tracking-[0.3em] text-executive-blue block mb-4">Portfolio</span>
-                        <h2 className="font-display text-5xl lg:text-7xl text-executive-navy mb-8">
+                        <h2 className="font-display text-4xl lg:text-7xl text-executive-navy mb-8">
                             Signature <br /> <span className="italic font-serif text-executive-gray/60">Developments</span>
                         </h2>
                     </FadeIn>

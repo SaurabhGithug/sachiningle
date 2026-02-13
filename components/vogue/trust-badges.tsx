@@ -11,9 +11,9 @@ const badges = [
 
 export default function TrustBadges() {
     return (
-        <section className="py-24 bg-executive-white relative overflow-hidden">
+        <section className="py-12 lg:py-24 bg-executive-white relative overflow-hidden">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-12">
                     {badges.map((badge, idx) => (
                         <FadeIn key={idx} delay={idx * 0.1} duration={0.8} direction="up">
                             <SpotlightCard 
