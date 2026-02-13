@@ -1,23 +1,24 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import FadeIn from '@/components/animations/fade-in';
 import { ArrowLeft } from 'lucide-react';
-import { allArticlesFull } from '../articles-data';
+import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
-    return Object.keys(allArticlesFull).map((slug) => ({
-        slug: slug,
-    }));
+interface ArticleData {
+    title: string;
+    category: string;
+    date: string;
+    readTime: string;
+    image: string;
+    content: React.ReactNode;
 }
 
-export default function JournalArticlePage({ params }: { params: { slug: string } }) {
-    const slug = params.slug;
-    const article = allArticlesFull[slug];
-
+export default function JournalArticleView({ article }: { article: ArticleData }) {
     if (!article) {
-        notFound();
+        return null;
     }
 
     return (
@@ -34,7 +35,7 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
                             {article.category}
                         </span>
                         <span className="text-executive-gray text-xs uppercase tracking-wider">
-                            {article.displayDate} • {article.readTime}
+                            {article.date} • {article.readTime}
                         </span>
                     </div>
 
@@ -52,7 +53,6 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
                             fill
                             className="object-cover"
                             priority
-                            sizes="(max-width: 1024px) 100vw, 896px"
                         />
                     </div>
                 </FadeIn>
